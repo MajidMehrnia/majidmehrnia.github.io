@@ -47,7 +47,7 @@
             margin-bottom: 0.6em;
         }
 
-        /* Center the buttons in the welcome section */
+        /* Welcome section buttons */
         #intro .actions {
             display: flex;
             justify-content: center;
@@ -96,55 +96,63 @@
             text-underline-offset: 3px;
         }
 
-        /* Project 1: show only one GIF inside the image frame */
-        #pump-project .pump-image {
+        /* =========================================
+           PROJECT IMAGE FRAMES
+           All three project image frames are square
+           and use the same dimensions.
+           ========================================= */
+
+        #one.spotlights > section > .image,
+        #one.spotlights #pump-project .pump-image {
+            box-sizing: border-box !important;
+            width: 40% !important;
+            flex: 0 0 40% !important;
+            aspect-ratio: 1 / 1 !important;
+            height: auto !important;
+            min-height: 0 !important;
+            align-self: flex-start;
+            overflow: hidden !important;
             display: flex !important;
-            flex: 0 0 40%;
-            width: 40%;
-            min-width: 0;
             align-items: center !important;
             justify-content: center !important;
-            align-self: stretch;
-            overflow: hidden !important;
-            position: relative;
+            position: relative !important;
+            padding: 1.5em !important;
             background: rgba(0, 0, 0, 0.2);
-            cursor: pointer;
         }
 
-        #pump-project .pump-image img {
+        /* Ensure each frame displays one image element only */
+        #one.spotlights > section > .image img,
+        #one.spotlights #pump-project .pump-image img {
             display: block !important;
             position: static !important;
+            inset: auto !important;
             width: 100% !important;
             height: 100% !important;
             max-width: 100% !important;
             max-height: 100% !important;
             object-fit: contain !important;
-            object-position: center !important;
+            object-position: center center !important;
             margin: 0 !important;
             padding: 0 !important;
             background: transparent !important;
+            transform: none !important;
         }
 
-        /* Keep project 2 and 3 image frames intact */
-        .project-image {
-            overflow: hidden !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            position: relative;
-            background: rgba(0, 0, 0, 0.2);
+        /* Slightly smaller diaphragm GIF */
+        #one.spotlights #pump-project .pump-image {
+            padding: 2.5em !important;
+            cursor: pointer;
         }
 
-        .project-image img {
-            display: block !important;
-            max-width: 100% !important;
-            max-height: 100% !important;
-            object-fit: contain !important;
-            object-position: center !important;
-            margin: auto !important;
+        /* Keep text away from the image */
+        #one.spotlights #pump-project .content,
+        #one.spotlights > section:not(#pump-project) > .content {
+            box-sizing: border-box;
+            padding-left: 2em !important;
+            min-width: 0;
         }
 
-        /* Project details gallery: hidden until clicked */
+        /* Project gallery */
         .project-gallery-toggle {
             display: none;
             width: 100%;
@@ -179,21 +187,29 @@
                 flex-basis: 12em;
             }
 
-            #pump-project .pump-image {
-                flex: 0 0 100%;
-                width: 100%;
-                min-height: 18em;
+            #one.spotlights > section > .image,
+            #one.spotlights #pump-project .pump-image {
+                width: 100% !important;
+                flex: 0 0 100% !important;
+                aspect-ratio: 1 / 1 !important;
+                height: auto !important;
+                min-height: 0 !important;
+            }
+
+            #one.spotlights #pump-project .content,
+            #one.spotlights > section:not(#pump-project) > .content {
+                padding-left: 0 !important;
             }
         }
 
         @media screen and (max-width: 736px) {
-            .project-gallery-toggle {
-                padding: 1em;
-            }
-
             #intro .actions {
                 flex-wrap: wrap;
                 gap: 0.75em;
+            }
+
+            .project-gallery-toggle {
+                padding: 1em;
             }
         }
     </style>
@@ -226,7 +242,9 @@
                     <div class="intro-copy">
                         <h1>Majid Mehrnia</h1>
 
-                        <p>Mechanical Engineering | PhD</p>
+                        <p>
+                            Mechanical Engineering | PhD
+                        </p>
 
                         <p>
                             Senior Engineer focused on product development,
@@ -242,6 +260,7 @@
                     />
                 </div>
 
+                <!-- 3 main project titles -->
                 <ul class="intro-bullets">
                     <li><strong>Diaphragm Pump Design:</strong> Conceptual design &amp; validation for diverse laboratory requirements.</li>
                     <li><strong>EV Compressor Design:</strong> Thermal management &amp; compressor engineering for electric vehicles.</li>
@@ -250,10 +269,14 @@
 
                 <ul class="actions">
                     <li>
-                        <a href="#one" class="button scrolly">Projects</a>
+                        <a href="#one" class="button scrolly">
+                            Projects
+                        </a>
                     </li>
                     <li>
-                        <a href="#two" class="button scrolly">Skills</a>
+                        <a href="#two" class="button scrolly">
+                            Skills
+                        </a>
                     </li>
                 </ul>
 
@@ -266,16 +289,15 @@
             <!-- Project 1: Diaphragm Pump -->
             <section id="pump-project" style="flex-direction: column;">
 
-                <div class="pump-project-row" style="display: flex; width: 100%; flex-wrap: wrap;">
+                <div style="display: flex; width: 100%; flex-wrap: wrap;">
 
-                    <!-- Only one GIF appears in this frame -->
+                    <!-- Single diaphragm GIF -->
                     <a
-                        href="#pump-gallery"
+                        href="javascript:void(0);"
+                        onclick="toggleGallery('pump-gallery', this);"
                         class="image pump-image"
-                        aria-label="Show diaphragm pump project details"
                         aria-controls="pump-gallery"
                         aria-expanded="false"
-                        onclick="toggleGallery('pump-gallery', this); return false;"
                     >
                         <img
                             src="imag/diaphragmaction.gif"
@@ -283,7 +305,7 @@
                         />
                     </a>
 
-                    <div class="content" style="flex: 1 1 60%; min-width: 0;">
+                    <div class="content" style="flex: 1 1 60%;">
                         <div class="inner">
                             <h2>Diaphragm Pump Design</h2>
 
@@ -296,11 +318,11 @@
                             <ul class="actions">
                                 <li>
                                     <a
-                                        href="#pump-gallery"
+                                        href="javascript:void(0);"
+                                        onclick="toggleGallery('pump-gallery', this);"
                                         class="button"
                                         aria-controls="pump-gallery"
                                         aria-expanded="false"
-                                        onclick="toggleGallery('pump-gallery', this); return false;"
                                     >
                                         Project Details
                                     </a>
@@ -308,9 +330,10 @@
                             </ul>
                         </div>
                     </div>
+
                 </div>
 
-                <!-- These five images remain hidden until clicked -->
+                <!-- Hidden gallery: d1.jpg to d5.jpg -->
                 <div id="pump-gallery" class="project-gallery-toggle">
                     <img src="imag/d1.jpg" alt="Diaphragm Pump Detail 1" onerror="this.style.display='none';" />
                     <img src="imag/d2.jpg" alt="Diaphragm Pump Detail 2" onerror="this.style.display='none';" />
@@ -323,6 +346,7 @@
 
             <!-- Project 2: EV Compressor -->
             <section>
+
                 <a
                     href="https://github.com/MajidMehrnia/Electromechanical-Fluid-Systems-Engineering"
                     target="_blank"
@@ -360,10 +384,12 @@
                         </ul>
                     </div>
                 </div>
+
             </section>
 
             <!-- Project 3: Hydraulic Test System -->
             <section>
+
                 <a
                     href="https://drive.google.com/file/d/1851gT98VzbpQXctCNLxGYlBoxhSVcl2G/view?usp=drive_link"
                     target="_blank"
@@ -400,6 +426,7 @@
                         </ul>
                     </div>
                 </div>
+
             </section>
 
         </section>
@@ -568,22 +595,19 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- Toggle the diaphragm pump gallery -->
+    <!-- Toggle image gallery -->
     <script>
         function toggleGallery(galleryId, trigger) {
             var gallery = document.getElementById(galleryId);
 
             if (!gallery) return;
 
-            var isOpen = gallery.style.display === "block";
+            var isOpen = window.getComputedStyle(gallery).display !== "none";
 
             if (isOpen) {
-                $(gallery).stop(true, true).slideUp(300, function () {
-                    gallery.style.display = "none";
-                });
+                $(gallery).stop(true, true).slideUp(300);
             } else {
-                gallery.style.display = "block";
-                $(gallery).hide().stop(true, true).slideDown(300);
+                $(gallery).stop(true, true).slideDown(300);
             }
 
             var triggers = document.querySelectorAll(
