@@ -113,7 +113,7 @@
             padding: 1em;
         }
 
-        /* همرنگ کردن پس‌زمینه کادر گیف با پس‌زمینه اصلی محتوا */
+        /* تنظیم ظاهر و پس‌زمینه کادر گیف پروژه اول */
         #pump-project .pump-image {
             display: flex !important;
             align-items: center !important;
@@ -131,6 +131,11 @@
             object-fit: contain !important;
             margin: auto !important;
             padding: 1em !important;
+        }
+
+        /* یکسان‌سازی فاصله بالای متن پروژه اول با بقیه پروژه‌ها */
+        #pump-project .content > .inner {
+            padding-top: 4em !important;
         }
 
         /* استایل کشویی گالری پروژه‌ها */
@@ -165,6 +170,10 @@
                 width: 12em;
                 height: 12em;
                 flex-basis: 12em;
+            }
+
+            #pump-project .content > .inner {
+                padding-top: 2em !important;
             }
         }
     </style>
