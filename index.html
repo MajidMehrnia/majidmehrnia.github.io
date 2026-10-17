@@ -12,26 +12,28 @@
         <link rel="stylesheet" href="assets/css/noscript.css" />
     </noscript>
 
-    <!-- Clean Layout Adjustments -->
+    <!-- Layout & Image Adjustments -->
     <style>
         .intro-profile {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             gap: 2.5em;
-        }
-
-        .intro-profile .profile-photo {
-            width: 10em;
-            height: 10em;
-            flex: 0 0 10em;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 3px solid rgba(255,255,255,0.35);
         }
 
         .intro-profile .intro-copy {
             flex: 1;
             min-width: 0;
+        }
+
+        .intro-profile .profile-photo {
+            width: 12em;
+            height: 12em;
+            flex: 0 0 12em;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
         .intro-bullets {
@@ -67,21 +69,29 @@
             text-underline-offset: 3px;
         }
 
-        .project-image img {
-            object-fit: cover;
+        /* فیت شدن دقیق عکس‌های پروژه‌ها در کادر */
+        .project-image {
+            overflow: hidden;
         }
 
-        @media screen and (max-width: 736px) {
+        .project-image img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            object-position: center center !important;
+        }
+
+        @media screen and (max-width: 980px) {
             .intro-profile {
-                flex-direction: column;
+                flex-direction: column-reverse;
                 align-items: flex-start;
                 gap: 1.5em;
             }
 
             .intro-profile .profile-photo {
-                width: 8em;
-                height: 8em;
-                flex-basis: 8em;
+                width: 10em;
+                height: 10em;
+                flex-basis: 10em;
             }
         }
     </style>
@@ -111,12 +121,6 @@
             <div class="inner">
 
                 <div class="intro-profile">
-                    <img
-                        src="images/profile.jpg"
-                        alt="Majid Mehrnia"
-                        class="profile-photo"
-                    />
-
                     <div class="intro-copy">
                         <h1>Majid Mehrnia</h1>
 
@@ -130,6 +134,13 @@
                             and engineering excellence.
                         </p>
                     </div>
+
+                    <!-- عکس پروفایل در سمت راست -->
+                    <img
+                        src="images/profile.jpg"
+                        alt="Majid Mehrnia"
+                        class="profile-photo"
+                    />
                 </div>
 
                 <!-- 3 عنوان اصلی پروژه‌ها در بخش اول -->
@@ -163,8 +174,7 @@
                 <a href="#three" class="image project-image">
                     <img
                         src="images/diaphragm-pump.jpg"
-                        alt="Diaphragm pump engineering project"
-                        data-position="center center"
+                        alt="Diaphragm Pump Design"
                     />
                 </a>
 
@@ -194,8 +204,7 @@
                 <a href="#three" class="image project-image">
                     <img
                         src="images/ev-compressor.jpg"
-                        alt="Electric vehicle compressor engineering project"
-                        data-position="center center"
+                        alt="EV Compressor Design"
                     />
                 </a>
 
@@ -226,8 +235,7 @@
                 <a href="#three" class="image project-image">
                     <img
                         src="images/hydraulic-test-system.jpg"
-                        alt="High-precision hydraulic test system"
-                        data-position="center center"
+                        alt="Hydraulic Test System"
                     />
                 </a>
 
