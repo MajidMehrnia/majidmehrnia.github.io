@@ -46,7 +46,7 @@
             margin-bottom: 0.6em;
         }
 
-        /* اصلاح دکمه‌ها برای جا شدن کامل متن و مرکزچین شدن دقیق */
+        /* دکمه‌های بخش intro */
         #intro .actions {
             display: flex;
             justify-content: flex-start;
@@ -101,53 +101,30 @@
             text-underline-offset: 3px;
         }
 
-        /* فیت شدن کامل عکس‌های پروژه‌ها در کادر */
-        .project-image {
-            overflow: hidden;
+        /* فیت شدن کادرهای استاندارد پروژه‌ها */
+        #one.spotlights > section > .image img {
             display: block;
-            position: relative;
-            background: rgba(0, 0, 0, 0.2);
-            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
         }
 
-        .project-image img {
-            display: block;
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: contain !important;
-            object-position: center center !important;
-            padding: 1em;
+        /* تنظیم دکمه‌های پروژه اول در یک راستا */
+        #pump-project .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            margin-top: 1.5em;
         }
 
-        /* هم‌اندازه شدن کامل کادر عکس پروژه اول با بقیه پروژه‌ها */
-        #pump-project .pump-image {
-            overflow: hidden !important;
-            display: block !important;
-            position: relative !important;
-            background: rgba(0, 0, 0, 0.2) !important;
-            cursor: pointer !important;
-            background-image: none !important;
+        #pump-project .actions li {
+            padding: 0;
+            margin: 0;
         }
 
-        #pump-project .pump-image img {
-            display: block !important;
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: contain !important;
-            object-position: center center !important;
-            padding: 1em !important;
-            margin: 0 !important;
-            max-width: none !important;
-            max-height: none !important;
-        }
-
-        /* یکسان‌سازی فاصله بالای متن پروژه اول با بقیه پروژه‌ها */
-        #pump-project .content > .inner {
-            padding-top: 4em !important;
-        }
-
-        /* استایل کشویی گالری پروژه‌ها */
-        .project-gallery-toggle {
+        /* بخش‌های بازشونده (گالری، ورک‌فلو و ویدیو) */
+        .toggle-container {
             display: none;
             width: 100%;
             background: rgba(10, 8, 25, 0.95);
@@ -156,12 +133,23 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .project-gallery-toggle img {
+        .toggle-container img {
             width: 100%;
             max-width: 900px;
             height: auto;
             display: block;
             margin: 0 auto 1.5em auto;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .toggle-container video {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
             border-radius: 6px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -178,10 +166,6 @@
                 width: 12em;
                 height: 12em;
                 flex-basis: 12em;
-            }
-
-            #pump-project .content > .inner {
-                padding-top: 2em !important;
             }
 
             #intro .actions {
@@ -265,70 +249,75 @@
         <section id="one" class="wrapper style2 spotlights">
 
            <!-- Project 1: Diaphragm Pump -->
-            <section id="pump-project" style="flex-direction: column;">
+            <section id="pump-project">
 
-                <div class="pump-project-row" style="display: flex; width: 100%; flex-wrap: wrap;">
+                <!-- دقیقاً مشابه کادر تصویر پروژه‌های بعدی -->
+                <a href="javascript:void(0);" onclick="toggleSection('pump-gallery');" class="image">
+                    <img
+                        src="imag/diaphragmaction.gif"
+                        alt="Diaphragm Pump Action"
+                    />
+                </a>
 
-                    <!-- Only one GIF appears in this frame -->
-                    <a
-                        href="#pump-gallery"
-                        class="image pump-image"
-                        aria-label="Show diaphragm pump project details"
-                        aria-controls="pump-gallery"
-                        aria-expanded="false"
-                        onclick="toggleGallery('pump-gallery', this); return false;"
-                        style="flex: 1 1 40%;"
-                    >
-                        <img
-                            src="imag/diaphragmaction.gif"
-                            alt="Diaphragm Pump Action"
-                        />
-                    </a>
+                <div class="content">
+                    <div class="inner">
+                        <h2>Diaphragm Pump Explorer</h2>
 
-                    <div class="content" style="flex: 1 1 60%; min-width: 0;">
-                        <div class="inner">
-                            <h2>Diaphragm Pump Explorer</h2>
+                        <p>
+                            A platform for conceptual design, simulation, validation and Optimization of diaphragm pumps
+                            for diverse laboratory functional requirements,
+                            covering different media and pump functions.
+                        </p>
 
-                            <p>
-                                A platform for conceptual design, simulation, validation and Optimization of diaphragm pumps
-                                for diverse laboratory functional requirements,
-                                covering different media and pump functions.
-                            </p>
-
-                            <ul class="actions" style="flex-wrap: wrap; gap: 0.75em;">
-                                <li>
-                                    <a href="javascript:void(0);" onclick="toggleGallery('pump-gallery')" class="button">
-                                        Project Details
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="imag/Design_Workflow.docx" target="_blank" rel="noopener noreferrer" class="button">
-                                        Design Workflow
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="YOUR_VIDEO_LINK_HERE" target="_blank" rel="noopener noreferrer" class="button">
-                                        Watch Presentation
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                        <!-- ۳ دکمه در یک راستا -->
+                        <ul class="actions">
+                            <li>
+                                <a href="javascript:void(0);" onclick="toggleSection('pump-gallery');" class="button">
+                                    Project Details
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="toggleSection('pump-workflow');" class="button">
+                                    Design Workflow
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="toggleSection('pump-video');" class="button">
+                                    Watch Presentation
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- گالری کشویی ۵ عکس (d1 تا d5) -->
-                <div id="pump-gallery" class="project-gallery-toggle">
-                    <img src="imag/d1.jpg" alt="Diaphragm Pump Detail 1" onerror="this.style.display='none';" />
-                    <img src="imag/d2.jpg" alt="Diaphragm Pump Detail 2" onerror="this.style.display='none';" />
-                    <img src="imag/d3.jpg" alt="Diaphragm Pump Detail 3" onerror="this.style.display='none';" />
-                    <img src="imag/d4.jpg" alt="Diaphragm Pump Detail 4" onerror="this.style.display='none';" />
-                    <img src="imag/d5.jpg" alt="Diaphragm Pump Detail 5" onerror="this.style.display='none';" />
-                </div>
             </section>
+
+            <!-- بخش کشویی ۱: عکس‌های Project Details (d1 تا d5) -->
+            <div id="pump-gallery" class="toggle-container">
+                <img src="imag/d1.jpg" alt="Diaphragm Pump Detail 1" onerror="this.style.display='none';" />
+                <img src="imag/d2.jpg" alt="Diaphragm Pump Detail 2" onerror="this.style.display='none';" />
+                <img src="imag/d3.jpg" alt="Diaphragm Pump Detail 3" onerror="this.style.display='none';" />
+                <img src="imag/d4.jpg" alt="Diaphragm Pump Detail 4" onerror="this.style.display='none';" />
+                <img src="imag/d5.jpg" alt="Diaphragm Pump Detail 5" onerror="this.style.display='none';" />
+            </div>
+
+            <!-- بخش کشویی ۲: عکس‌های Design Workflow (w1 و w2) -->
+            <div id="pump-workflow" class="toggle-container">
+                <img src="imag/w1.jpg" alt="Design Workflow 1" onerror="this.style.display='none';" />
+                <img src="imag/w2.jpg" alt="Design Workflow 2" onerror="this.style.display='none';" />
+            </div>
+
+            <!-- بخش کشویی ۳: ویدیو Presentation -->
+            <div id="pump-video" class="toggle-container">
+                <video controls preload="metadata">
+                    <source src="imag/watch.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
 
             <!-- Project 2: EV Compressor (لینک به GitHub) -->
             <section>
-                <a href="https://github.com/MajidMehrnia/Electromechanical-Fluid-Systems-Engineering" target="_blank" rel="noopener noreferrer" class="image project-image">
+                <a href="https://github.com/MajidMehrnia/Electromechanical-Fluid-Systems-Engineering" target="_blank" rel="noopener noreferrer" class="image">
                     <img
                         src="imag/ev-compressor.jpg"
                         alt="EV Compressor Design"
@@ -359,7 +348,7 @@
 
             <!-- Project 3: Hydraulic Test System (لینک به Google Drive PDF) -->
             <section>
-                <a href="https://drive.google.com/file/d/1851gT98VzbpQXctCNLxGYlBoxhSVcl2G/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="image project-image">
+                <a href="https://drive.google.com/file/d/1851gT98VzbpQXctCNLxGYlBoxhSVcl2G/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="image">
                     <img
                         src="imag/hydraulic-test-system.jpg"
                         alt="Hydraulic Test System"
@@ -544,17 +533,23 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- Script to toggle image gallery -->
+    <!-- Script to toggle sections (Galleries & Video) -->
     <script>
-        function toggleGallery(galleryId) {
-            var gallery = document.getElementById(galleryId);
-            if (gallery.style.display === "block") {
-                $(gallery).slideUp(300, function() {
-                    gallery.style.display = "none";
-                });
+        function toggleSection(sectionId) {
+            var target = document.getElementById(sectionId);
+            if (!target) return;
+
+            var isVisible = $(target).is(':visible');
+
+            // اگر ویدیویی در حال پخش باشد، موقع بستن مکس می‌شود
+            if (isVisible) {
+                var video = target.querySelector('video');
+                if (video) video.pause();
+                $(target).slideUp(300);
             } else {
-                gallery.style.display = "block";
-                $(gallery).hide().slideDown(300);
+                // بستن سایر بخش‌های باز پروژه اول برای حفظ نظم
+                $('.toggle-container').not('#' + sectionId).slideUp(200);
+                $(target).hide().slideDown(300);
             }
         }
     </script>
