@@ -46,15 +46,18 @@
             margin-bottom: 0.6em;
         }
 
-        /* دکمه‌های بخش اول */
+        /* انتقال دکمه‌ها به زیر متن معرفی در سمت راست و هم‌سایز کردن آن‌ها */
         #intro .actions {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 1.5em;
-            margin-top: 2em;
+            margin-top: 1.8em;
         }
 
         #intro .actions .button {
+            width: 11em !important;
+            text-align: center !important;
+            justify-content: center !important;
             background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%) !important;
             color: #ffffff !important;
             border: 1px solid rgba(255, 255, 255, 0.3) !important;
@@ -175,6 +178,10 @@
             #pump-project .content > .inner {
                 padding-top: 2em !important;
             }
+
+            #intro .actions {
+                justify-content: flex-start;
+            }
         }
     </style>
 </head>
@@ -215,6 +222,20 @@
                             complex Fluid systems, technology roadmapping
                             and engineering excellence.
                         </p>
+
+                        <!-- دکمه‌ها در سمت راست و زیر متن معرفی قرار گرفتند -->
+                        <ul class="actions">
+                            <li>
+                                <a href="#one" class="button scrolly">
+                                    Projects
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#two" class="button scrolly">
+                                    Skills
+                                </a>
+                            </li>
+                        </ul>
                     </div>
 
                     <!-- Profile photo -->
@@ -230,20 +251,6 @@
                     <li><strong>Diaphragm Pump Design:</strong> Conceptual design &amp; validation for diverse laboratory requirements.</li>
                     <li><strong>EV Compressor Design:</strong> Thermal management &amp; compressor engineering for electric vehicles.</li>
                     <li><strong>Hydraulic Test System:</strong> High-precision testbed engineering, control &amp; data acquisition.</li>
-                </ul>
-
-                <!-- دکمه‌های وسط‌چین شده -->
-                <ul class="actions">
-                    <li>
-                        <a href="#one" class="button scrolly">
-                            Projects
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#two" class="button scrolly">
-                            Skills
-                        </a>
-                    </li>
                 </ul>
 
             </div>
