@@ -46,7 +46,7 @@
             margin-bottom: 0.6em;
         }
 
-        /* انتقال دکمه‌ها به زیر متن معرفی در سمت راست و هم‌سایز کردن آن‌ها */
+        /* اصلاح دکمه‌ها برای جا شدن کامل متن و مرکزچین شدن دقیق */
         #intro .actions {
             display: flex;
             justify-content: flex-start;
@@ -55,9 +55,12 @@
         }
 
         #intro .actions .button {
-            width: 11em !important;
+            width: 12em !important;
+            padding: 0 !important;
+            height: 3em !important;
+            line-height: 3em !important;
             text-align: center !important;
-            justify-content: center !important;
+            display: inline-block !important;
             background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%) !important;
             color: #ffffff !important;
             border: 1px solid rgba(255, 255, 255, 0.3) !important;
@@ -223,7 +226,7 @@
                             and engineering excellence.
                         </p>
 
-                        <!-- دکمه‌ها در سمت راست و زیر متن معرفی قرار گرفتند -->
+                        <!-- دکمه‌ها در سمت راست و زیر متن معرفی -->
                         <ul class="actions">
                             <li>
                                 <a href="#one" class="button scrolly">
