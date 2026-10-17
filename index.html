@@ -1,0 +1,297 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Majid Mehrnia | Engineering Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    
+    <!-- Hyperspace CSS & FontAwesome Icons -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <style>
+        /* Custom Adjustments for Intro Section */
+        #intro .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 2em;
+            padding: 2em 0;
+        }
+
+        #intro .profile-column {
+            flex: 0 0 28%;
+        }
+
+        #intro .intro-column {
+            flex: 1 1 65%;
+            min-width: 0;
+        }
+
+        #intro .profile-column img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        #intro .intro-column ul {
+            padding-left: 1.2em;
+            margin-bottom: 2em;
+        }
+
+        #intro .intro-column li {
+            margin-bottom: 0.5em;
+            line-height: 1.6;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media screen and (max-width: 980px) {
+            #intro .row {
+                flex-wrap: wrap;
+            }
+
+            #intro .profile-column {
+                flex: 0 0 40%;
+                margin: 0 auto;
+            }
+
+            #intro .intro-column {
+                flex: 1 1 100%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            #intro .row {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            #intro .profile-column {
+                width: 100%;
+                max-width: 220px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+
+<body class="is-preload">
+
+    <!-- Sidebar -->
+    <section id="sidebar">
+        <div class="inner">
+            <nav>
+                <ul>
+                    <li><a href="#intro">Welcome</a></li>
+                    <li><a href="#one">Projects</a></li>
+                    <li><a href="#two">Skills</a></li>
+                    <li><a href="#three">Get in touch</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- WELCOME -->
+        <section id="intro" class="wrapper style1 fullscreen fade-up">
+            <div class="inner">
+                <div class="row">
+
+                    <!-- Profile Photo -->
+                    <div class="profile-column">
+                        <img src="images/profile.jpg"
+                             alt="Majid Mehrnia"
+                             onerror="this.style.display='none'">
+                    </div>
+
+                    <!-- Main Intro Content with Expert Bullet Points -->
+                    <div class="intro-column">
+                        <h1>Majid Mehrnia</h1>
+                        <p><strong>Mechanical Engineering | PhD</strong></p>
+
+                        <ul>
+                            <li><strong>NPI/NPD |</strong> Hybrid Agile + Stage-Gate | V-Model | DfX / DFSS | <a href="https://github-production-user-asset-6210df.s3.amazonaws.com/249486107/670519235-4873915c-7b25-4e0e-8a37-b5efbb035efd.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20261017%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261017T100929Z&X-Amz-Expires=300&X-Amz-Signature=ce9778d45a603c43b80c55111d0a49126c36a5731d4a7ba7c14c65db2738e0ba&X-Amz-SignedHeaders=host&response-content-type=image%2Fjpeg" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Value Engineering - VAVE for Leaders Certificate</a></li>
+                            <li><strong>Engineering & Product Strategy |</strong> Technology Roadmapping | Portfolio Management</li>
+                            <li><strong>Electromechanical & Complex Fluid Systems |</strong> Pumps, Compressores, Turbines</li>
+                            <li><strong>Digital Engineering |</strong> MBSE | Digital Thread | ECAD/MCAD</li>
+                            <li><strong>Operational Excellence |</strong> Quality | Cost | Reliability | On-Time Delivery</li>
+                        </ul>
+
+                        <ul class="actions">
+                            <li><a href="#one" class="button scrolly">Projects</a></li>
+                            <li><a href="#two" class="button scrolly">Skills</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS (Spotlights) -->
+        <section id="one" class="wrapper style2 spotlights">
+
+            <!-- 1. DIAPHRAGM PUMP -->
+            <section>
+                <a href="https://github.com/MajidMehrnia" class="image project-image" target="_blank" rel="noopener noreferrer">
+                    <img src="images/diaphragm-pump.jpg"
+                         alt="Diaphragm Pump Design"
+                         data-position="center center" />
+                </a>
+                <div class="content">
+                    <div class="inner">
+                        <h2>Diaphragm Pump Design</h2>
+                        <p>
+                            Conceptual Design and Validation of Diaphragm Pumps for Diverse Laboratory Functional Requirements   .
+                        </p>
+                        <ul class="actions">
+                            <li><a href="https://github.com/MajidMehrnia" class="button" target="_blank" rel="noopener noreferrer">Learn More</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. EV COMPRESSOR -->
+            <section>
+                <a href="https://github.com/MajidMehrnia" class="image project-image" target="_blank" rel="noopener noreferrer">
+                    <img src="images/ev-compressor.jpg"
+                         alt="EV Compressor Design"
+                         data-position="top center" />
+                </a>
+                <div class="content">
+                    <div class="inner">
+                        <h2>EV Compressor Design</h2>
+                        <p>
+                            Compressor engineering tailored for electric vehicle heat pump systems, prioritizing energy efficiency and reliable performance.
+                        </p>
+                        <ul class="actions">
+                            <li><a href="https://github.com/MajidMehrnia" class="button" target="_blank" rel="noopener noreferrer">Learn More</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. HYDRAULIC TEST SYSTEM -->
+            <section>
+                <a href="https://github.com/MajidMehrnia" class="image project-image" target="_blank" rel="noopener noreferrer">
+                    <img src="images/hydraulic-test-system.jpg"
+                         alt="Hydraulic Test System"
+                         data-position="25% 25%" />
+                </a>
+                <div class="content">
+                    <div class="inner">
+                        <h2>Hydraulic Test System</h2>
+                        <p>
+                            High-precision hydraulic test bed design, automated control integration, and continuous data acquisition development.
+                        </p>
+                        <ul class="actions">
+                            <li><a href="https://github.com/MajidMehrnia" class="button" target="_blank" rel="noopener noreferrer">Learn More</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+
+        <!-- SKILLS -->
+        <section id="two" class="wrapper style3 fade-up">
+            <div class="inner">
+                <h2>Skills</h2>
+                <div class="features">
+
+                    <section>
+                        <span class="icon solid major fa-cogs"></span>
+                        <h3>Mechanical Design</h3>
+                        <p>CAD modeling, component stress analysis, and end-to-end mechanical product development.</p>
+                    </section>
+
+                    <section>
+                        <span class="icon solid major fa-tachometer-alt"></span>
+                        <h3>Simulation</h3>
+                        <p>MATLAB, Simulink, and Simscape dynamic system modeling and validation.</p>
+                    </section>
+
+                    <section>
+                        <span class="icon solid major fa-water"></span>
+                        <h3>Fluid Systems</h3>
+                        <p>Design and analysis of pumps, compressors, heat exchangers, and hydraulic networks.</p>
+                    </section>
+
+                    <section>
+                        <span class="icon solid major fa-tools"></span>
+                        <h3>NPD & Optimization</h3>
+                        <p>Design for Reliability (DFR), VAVE optimization, and continuous product improvement.</p>
+                    </section>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="three" class="wrapper style1 fade-up">
+            <div class="inner">
+                <h2>Get in touch</h2>
+                <div class="split style1">
+                    <section>
+                        <ul class="contact">
+                            <li>
+                                <h3>Email</h3>
+                                <a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a>
+                            </li>
+                            <li>
+                                <h3>Social Media</h3>
+                                <ul class="icons">
+                                    <li>
+                                        <a href="https://github.com/MajidMehrnia"
+                                           class="icon brands fa-github"
+                                           target="_blank"
+                                           rel="noopener noreferrer">
+                                            <span class="label">GitHub</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.linkedin.com/"
+                                           class="icon brands fa-linkedin-in"
+                                           target="_blank"
+                                           rel="noopener noreferrer">
+                                            <span class="label">LinkedIn</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="wrapper style1-alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy; Majid Mehrnia. All rights reserved.</li>
+                <li>Design: <a href="https://html5up.net/hyperspace">Hyperspace by HTML5 UP</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
