@@ -97,25 +97,19 @@
 
         /* فیت شدن کامل عکس‌های پروژه‌ها در کادر */
         .project-image {
-            overflow: hidden !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
+            overflow: hidden;
+            display: block;
             position: relative;
             background: rgba(0, 0, 0, 0.2);
             cursor: pointer;
         }
 
         .project-image img {
-            display: block !important;
-            max-width: 100% !important;
-            max-height: 100% !important;
-            width: auto !important;
-            height: auto !important;
+            display: block;
+            width: 100% !important;
+            height: 100% !important;
             object-fit: contain !important;
             object-position: center center !important;
-            background-repeat: no-repeat !important;
-            margin: auto !important;
             padding: 1em;
         }
 
@@ -229,24 +223,34 @@
         <!-- PROJECTS -->
         <section id="one" class="wrapper style2 spotlights">
 
-            <!-- Project 1: Diaphragm Pump (باز شونده) -->
-            <section style="flex-direction: column;">
-                <div style="display: flex; width: 100%; flex-wrap: wrap;">
-                    <a href="javascript:void(0);" onclick="toggleGallery('pump-gallery')" class="image project-image" style="flex: 1 1 40%;">
+           <!-- Project 1: Diaphragm Pump -->
+            <section id="pump-project" style="flex-direction: column;">
+
+                <div class="pump-project-row" style="display: flex; width: 100%; flex-wrap: wrap;">
+
+                    <!-- Only one GIF appears in this frame -->
+                    <a
+                        href="#pump-gallery"
+                        class="image pump-image"
+                        aria-label="Show diaphragm pump project details"
+                        aria-controls="pump-gallery"
+                        aria-expanded="false"
+                        onclick="toggleGallery('pump-gallery', this); return false;"
+                    >
                         <img
                             src="imag/diaphragmaction.gif"
-                            alt="Diaphragm Pump Design"
+                            alt="Diaphragm Pump Action"
                         />
                     </a>
 
-                    <div class="content" style="flex: 1 1 60%;">
+                    <div class="content" style="flex: 1 1 60%; min-width: 0;">
                         <div class="inner">
                             <h2>Diaphragm Pump Design</h2>
 
                             <p>
-                                Conceptual design and validation of diaphragm pumps
+                                A platform for conceptual design, simulation, validation and Optimization of diaphragm pumps
                                 for diverse laboratory functional requirements,
-                                covering different media and operating functions.
+                                covering different media and pump functions.
                             </p>
 
                             <ul class="actions">
