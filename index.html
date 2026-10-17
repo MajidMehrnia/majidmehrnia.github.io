@@ -50,12 +50,13 @@
         #intro .actions {
             display: flex;
             justify-content: flex-start;
-            gap: 1.5em;
+            flex-wrap: wrap;
+            gap: 1.2em;
             margin-top: 1.8em;
         }
 
         #intro .actions .button {
-            width: 12em !important;
+            width: 11em !important;
             padding: 0 !important;
             height: 3em !important;
             line-height: 3em !important;
@@ -149,7 +150,7 @@
             max-width: 900px;
             height: 600px;
             display: block;
-            margin: 0 auto;
+            margin: 0 auto 1.5em auto;
             border-radius: 6px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -224,15 +225,10 @@
                         </p>
 
                         <p>
-                            NPI &amp;                             <a
-                                class="certificate-link"
-                                href="imag/vave-certificate.jpg"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >VAVE</a> | Fluid Systems: Pumps, Compressors &amp; Turbines
+                            NPI &amp; NPD | Fluid Systems: Pumps, Compressors &amp; Turbines
                         </p>
                         
-                        <!-- دکمه‌ها در سمت راست و زیر متن معرفی -->
+                        <!-- ۴ دکمه هم‌اندازه و در یک راستا -->
                         <ul class="actions">
                             <li>
                                 <a href="#one" class="button scrolly">
@@ -244,6 +240,16 @@
                                     Skills
                                 </a>
                             </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="toggleSection('cv-container');" class="button">
+                                    CV
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="toggleSection('certificates-container');" class="button">
+                                    Certificates
+                                </a>
+                            </li>
                         </ul>
                     </div>
 
@@ -253,6 +259,17 @@
                         alt="Majid Mehrnia"
                         class="profile-photo"
                     />
+                </div>
+
+                <!-- بخش کشویی نمایش فایل CV.pdf -->
+                <div id="cv-container" class="toggle-container" style="margin-top: 2em;">
+                    <iframe src="imag/CV.pdf" title="CV PDF"></iframe>
+                </div>
+
+                <!-- بخش کشویی نمایش فایل‌های Hydraulic.pdf و VAVE.pdf -->
+                <div id="certificates-container" class="toggle-container" style="margin-top: 2em;">
+                    <iframe src="imag/Hydraulic.pdf" title="Hydraulic Certificate PDF"></iframe>
+                    <iframe src="imag/VAVE.pdf" title="VAVE Certificate PDF" style="margin-bottom: 0;"></iframe>
                 </div>
 
                 <!-- 3 main project titles -->
@@ -308,7 +325,7 @@
 
             <!-- بخش کشویی ۱: پیش‌نمایش فایل PDF Design Workflow -->
             <div id="pump-workflow" class="toggle-container">
-                <iframe src="imag/Design_Workflow.pdf" title="Design Workflow PDF"></iframe>
+                <iframe src="imag/Design_Workflow.pdf" title="Design Workflow PDF" style="margin-bottom: 0;"></iframe>
             </div>
 
             <!-- بخش کشویی ۲: ویدیو Presentation -->
@@ -523,6 +540,7 @@
         <div class="inner">
             <ul class="menu">
                 <li>&copy; Majid Mehrnia. All rights reserved.</li>
+                <li>Design based on <a href="https://html5up.net/hyperspace">Hyperspace by HTML5 UP</a>.</li>
             </ul>
         </div>
     </footer>
