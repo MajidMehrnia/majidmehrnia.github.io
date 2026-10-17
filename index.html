@@ -1,297 +1,993 @@
+
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>Majid Mehrnia | Engineering Portfolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    
-    <!-- Hyperspace CSS & FontAwesome Icons -->
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#312450">
+  <meta name="description" content="Majid Mehrnia — Mechanical Engineering, NPI/NPD, Engineering Strategy and Complex Fluid Systems.">
 
-    <style>
-        /* Custom Adjustments for Intro Section Layout */
-        #intro .row {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            gap: 2em;
-            padding: 2em 0;
-        }
+  <title>Majid Mehrnia | Engineering Portfolio</title>
 
-        #intro .profile-column {
-            flex: 0 0 28%;
-        }
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap');
 
-        #intro .intro-column {
-            flex: 1 1 65%;
-            min-width: 0;
-        }
+    :root {
+      --background: #312450;
+      --purple: #5e42a6;
+      --pink: #b74e91;
+      --blue: #5052b5;
+      --white: #ffffff;
+      --text: rgba(255,255,255,.86);
+      --muted: rgba(255,255,255,.62);
+      --border: rgba(255,255,255,.13);
+    }
 
-        #intro .profile-column img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        #intro .intro-column ul {
-            padding-left: 1.2em;
-            margin-bottom: 2em;
-        }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 25px;
+    }
 
-        #intro .intro-column li {
-            margin-bottom: 0.6em;
-            line-height: 1.6;
-        }
+    body {
+      background: var(--background);
+      color: var(--text);
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
 
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color .2s ease, background .2s ease;
+    }
 
-        @media screen and (max-width: 980px) {
-            #intro .row {
-                flex-wrap: wrap;
-            }
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-            #intro .profile-column {
-                flex: 0 0 40%;
-                margin: 0 auto;
-            }
+    h1, h2, h3 {
+      color: var(--white);
+      font-weight: 700;
+      line-height: 1.4;
+    }
 
-            #intro .intro-column {
-                flex: 1 1 100%;
-            }
-        }
+    h1 {
+      font-size: clamp(2.4rem, 4vw, 3.2rem);
+      letter-spacing: -.035em;
+      margin-bottom: .5rem;
+    }
 
-        @media screen and (max-width: 600px) {
-            #intro .row {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-            }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
 
-            #intro .profile-column {
-                width: 100%;
-                max-width: 220px;
-                margin: 0 auto;
-            }
-        }
-    </style>
+    h3 {
+      font-size: 1.15rem;
+      margin-bottom: .5rem;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    /* LEFT SIDEBAR */
+
+    #sidebar {
+      position: fixed;
+      inset: 0 auto 0 0;
+      width: 17rem;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      background: var(--background);
+    }
+
+    #sidebar nav {
+      width: 100%;
+      padding: 2rem;
+    }
+
+    #sidebar ul {
+      list-style: none;
+    }
+
+    #sidebar li {
+      border-top: 1px solid var(--border);
+    }
+
+    #sidebar li:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    #sidebar a {
+      display: block;
+      padding: .85rem .65rem;
+      color: var(--muted);
+      font-size: .77rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-align: right;
+      text-transform: uppercase;
+    }
+
+    #sidebar a:hover {
+      color: var(--white);
+    }
+
+    #sidebar a.active {
+      color: var(--white);
+      box-shadow: inset -3px 0 var(--pink);
+      padding-right: 1rem;
+    }
+
+    #wrapper {
+      margin-left: 17rem;
+    }
+
+    /* SECTION LAYOUT */
+
+    .wrapper {
+      min-height: 100vh;
+      padding: 5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .inner {
+      width: 100%;
+      max-width: 68rem;
+      margin: 0 auto;
+    }
+
+    .style1 {
+      background: linear-gradient(120deg, #312450 0%, #3b2a63 100%);
+    }
+
+    .style2 {
+      background: var(--purple);
+    }
+
+    .style3 {
+      background: var(--pink);
+    }
+
+    .style4 {
+      background: var(--blue);
+    }
+
+    .major {
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 2rem;
+    }
+
+    /* INTRO */
+
+    #intro {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #intro::before {
+      content: "";
+      position: absolute;
+      width: 26rem;
+      height: 26rem;
+      border: 1px solid rgba(255,255,255,.035);
+      border-radius: 50%;
+      right: -10rem;
+      top: -12rem;
+      pointer-events: none;
+    }
+
+    #intro .inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .intro-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(180px, 28%);
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .intro-content {
+      min-width: 0;
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      margin-bottom: 1.7rem;
+    }
+
+    .profile-column {
+      min-width: 0;
+    }
+
+    .profile-photo {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 18px 45px rgba(0,0,0,.22);
+      background: rgba(255,255,255,.04);
+    }
+
+    /* SPECIALTIES */
+
+    .specialties {
+      list-style: none;
+      margin-top: .7rem;
+    }
+
+    .specialties li {
+      padding: .75rem 0 .75rem 1rem;
+      margin-bottom: .45rem;
+      border-left: 2px solid rgba(255,255,255,.25);
+      line-height: 1.65;
+      overflow-wrap: anywhere;
+    }
+
+    .specialties strong {
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .certificate-link {
+      color: #ffd1eb;
+      border-bottom: 1px dotted rgba(255,209,235,.8);
+      font-weight: 600;
+    }
+
+    .certificate-link:hover {
+      color: var(--white);
+      border-bottom-color: var(--white);
+    }
+
+    /* BUTTONS */
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: 1.8rem;
+      list-style: none;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.9rem;
+      padding: .65rem 1.7rem;
+      border: 1px solid rgba(255,255,255,.38);
+      border-radius: 2rem;
+      color: var(--white);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .button:hover {
+      background: rgba(255,255,255,.1);
+      border-color: var(--white);
+    }
+
+    /* PROJECT SPOTLIGHTS */
+
+    .spotlights {
+      padding: 0;
+    }
+
+    .spotlights > section {
+      display: flex;
+      min-height: 22rem;
+    }
+
+    .spotlights > section:nth-child(1) {
+      background: var(--purple);
+    }
+
+    .spotlights > section:nth-child(2) {
+      background: var(--blue);
+      flex-direction: row-reverse;
+    }
+
+    .spotlights > section:nth-child(3) {
+      background: var(--pink);
+    }
+
+    .project-image {
+      display: block;
+      position: relative;
+      flex: 0 0 38%;
+      min-width: 0;
+      overflow: hidden;
+      background: rgba(0,0,0,.1);
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+
+    .project-image:hover img {
+      transform: scale(1.045);
+    }
+
+    .project-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 3.5rem;
+      min-width: 0;
+    }
+
+    .project-content .inner {
+      margin: 0;
+    }
+
+    .project-content p {
+      max-width: 34rem;
+    }
+
+    .project-content .actions {
+      margin-top: 1.5rem;
+    }
+
+    /* SKILLS */
+
+    #two .features {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+    }
+
+    .feature {
+      padding: 2rem;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.025);
+    }
+
+    .feature-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.1rem;
+      height: 3.1rem;
+      margin-bottom: 1.1rem;
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: 50%;
+      color: var(--white);
+      font-size: 1.3rem;
+    }
+
+    .feature p {
+      font-size: .96rem;
+    }
+
+    /* CONTACT */
+
+    #three {
+      min-height: 70vh;
+    }
+
+    .contact-intro {
+      max-width: 38rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .contact-links a {
+      color: var(--white);
+      border-bottom: 1px dotted rgba(255,255,255,.5);
+    }
+
+    .contact-links a:hover {
+      color: #ffd1eb;
+      border-bottom-color: #ffd1eb;
+    }
+
+    /* FOOTER */
+
+    #footer {
+      padding: 1.5rem 4rem;
+      background: rgba(0,0,0,.13);
+    }
+
+    #footer .inner {
+      max-width: 68rem;
+      margin: auto;
+    }
+
+    #footer .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem 1.5rem;
+      list-style: none;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    #footer a {
+      border-bottom: 1px dotted rgba(255,255,255,.4);
+    }
+
+    /* SUBTLE REVEAL */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(15px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* TABLET */
+
+    @media (max-width: 1200px) {
+      .wrapper {
+        padding: 4rem 2.5rem;
+      }
+
+      .intro-row {
+        gap: 2rem;
+      }
+
+      .project-content {
+        padding: 2.5rem;
+      }
+    }
+
+    @media (max-width: 980px) {
+      #sidebar {
+        width: 13rem;
+      }
+
+      #sidebar nav {
+        padding: 1.4rem;
+      }
+
+      #wrapper {
+        margin-left: 13rem;
+      }
+
+      .intro-row {
+        grid-template-columns: minmax(0, 1fr) 160px;
+        gap: 1.5rem;
+      }
+
+      .profile-photo {
+        aspect-ratio: 3 / 4;
+      }
+
+      .spotlights > section {
+        min-height: 19rem;
+      }
+
+      .project-image {
+        flex-basis: 35%;
+      }
+
+      .project-content {
+        padding: 2rem;
+      }
+
+      #footer {
+        padding: 1.5rem 2.5rem;
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 736px) {
+      #sidebar {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        display: block;
+        background: rgba(49,36,80,.98);
+        backdrop-filter: blur(10px);
+      }
+
+      #sidebar nav {
+        padding: 0 .35rem;
+      }
+
+      #sidebar ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      #sidebar li,
+      #sidebar li:last-child {
+        border: 0;
+      }
+
+      #sidebar a {
+        padding: .8rem .55rem;
+        text-align: center;
+        font-size: .65rem;
+        letter-spacing: .04em;
+      }
+
+      #sidebar a.active {
+        box-shadow: inset 0 -3px var(--pink);
+        padding-right: .55rem;
+      }
+
+      #wrapper {
+        margin-left: 0;
+      }
+
+      .wrapper {
+        min-height: auto;
+        padding: 3.5rem 1.5rem;
+      }
+
+      #intro {
+        min-height: auto;
+      }
+
+      .intro-row {
+        grid-template-columns: minmax(0, 1fr) 125px;
+        gap: 1.1rem;
+        align-items: start;
+      }
+
+      h1 {
+        font-size: 2.15rem;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+
+      .profile-photo {
+        aspect-ratio: 3 / 4;
+      }
+
+      .specialties li {
+        font-size: .96rem;
+      }
+
+      .spotlights > section,
+      .spotlights > section:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
+      }
+
+      .project-image {
+        flex: none;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+      }
+
+      .project-image img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      .project-content {
+        padding: 2.3rem 1.5rem;
+      }
+
+      #two .features {
+        grid-template-columns: 1fr;
+      }
+
+      .feature {
+        padding: 1.6rem;
+      }
+
+      #three {
+        min-height: auto;
+      }
+
+      #footer {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .intro-row {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-column {
+        width: 145px;
+        grid-row: 1;
+      }
+
+      .intro-content {
+        grid-row: 2;
+      }
+
+      .actions {
+        gap: .6rem;
+      }
+
+      .button {
+        padding: .6rem 1.1rem;
+        min-width: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
 </head>
 
-<body class="is-preload">
+<body>
 
-    <!-- Sidebar -->
-    <section id="sidebar">
-        <div class="inner">
-            <nav>
-                <ul>
-                    <li><a href="#intro">Welcome</a></li>
-                    <li><a href="#one">Projects</a></li>
-                    <li><a href="#two">Skills</a></li>
-                    <li><a href="#three">Get in touch</a></li>
-                </ul>
-            </nav>
+  <!-- SIDEBAR -->
+  <aside id="sidebar">
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a class="active" href="#intro">Welcome</a></li>
+        <li><a href="#one">Projects</a></li>
+        <li><a href="#two">Skills</a></li>
+        <li><a href="#three">Get in touch</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main id="wrapper">
+
+    <!-- INTRO -->
+    <section id="intro" class="wrapper style1">
+      <div class="inner">
+        <div class="intro-row">
+
+          <div class="intro-content">
+            <h1>Majid Mehrnia</h1>
+            <p class="subtitle"><strong>Mechanical Engineering | PhD</strong></p>
+
+            <ul class="specialties">
+
+              <li>
+                <strong>NPI/NPD</strong> |
+                Hybrid Agile + Stage-Gate |
+                V-Model |
+                DfX / DFSS |
+                Value Engineering —
+                <a
+                  class="certificate-link"
+                  href="https://github.com/user-attachments/assets/4873915c-7b25-4e0e-8a37-b5efbb035efd"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >VAVE for Leaders — Certificate ↗</a>
+              </li>
+
+              <li>
+                <strong>Engineering &amp; Product Strategy</strong> |
+                Technology Roadmapping |
+                Portfolio Management
+              </li>
+
+              <li>
+                <strong>Electromechanical &amp; Complex Fluid Systems</strong> |
+                Pumps, Compressors, Turbines |
+                Systems Engineering |
+                Product Architecture
+              </li>
+
+              <li>
+                <strong>Digital Engineering</strong> |
+                MBSE |
+                Digital Thread |
+                Digital Twin |
+                ECAD/MCAD
+              </li>
+
+              <li>
+                <strong>Operational Excellence</strong> |
+                Quality |
+                Cost |
+                Reliability |
+                On-Time Delivery
+              </li>
+
+            </ul>
+
+            <ul class="actions">
+              <li><a href="#one" class="button">View Projects</a></li>
+              <li><a href="#three" class="button">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="profile-column">
+            <img
+              class="profile-photo"
+              src="images/profile.jpg"
+              alt="Majid Mehrnia"
+              onerror="this.style.display='none'"
+            >
+          </div>
+
         </div>
+      </div>
     </section>
 
-    <!-- Wrapper -->
-    <div id="wrapper">
+    <!-- PROJECTS -->
+    <section id="one" class="spotlights">
 
-        <!-- WELCOME -->
-        <section id="intro" class="wrapper style1 fullscreen fade-up">
-            <div class="inner">
-                <div class="row">
+      <section class="reveal">
+        <a
+          href="https://github.com/MajidMehrnia"
+          class="project-image"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Diaphragm Pump Design on GitHub"
+        >
+          <img
+            src="images/diaphragm-pump.jpg"
+            alt="Diaphragm Pump Design"
+            loading="lazy"
+          >
+        </a>
 
-                    <!-- Profile Photo -->
-                    <div class="profile-column">
-                        <img src="images/profile.jpg"
-                             alt="Majid Mehrnia"
-                             onerror="this.style.display='none'">
-                    </div>
-
-                    <!-- Main Intro Content -->
-                    <div class="intro-column">
-                        <h1>Majid Mehrnia</h1>
-                        <p><strong>Mechanical Engineering | PhD</strong></p>
-
-                        <ul>
-                            <li><strong>NPI/NPD |</strong> Hybrid Agile + Stage-Gate | V-Model | DfX / DFSS | <a href="images/vave-certificate.jpg" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Value Engineering - VAVE for Leaders Certificate</a></li>
-                            <li><strong>Engineering & Product Strategy |</strong> Technology Roadmapping | Portfolio Management</li>
-                            <li><strong>Electromechanical & Complex Fluid Systems |</strong> Pumps, Compressors, Turbines</li>
-                            <li><strong>Digital Engineering |</strong> MBSE | Digital Thread | ECAD/MCAD</li>
-                            <li><strong>Operational Excellence |</strong> Quality | Cost | Reliability | On-Time Delivery</li>
-                        </ul>
-
-                        <ul class="actions">
-                            <li><a href="#one" class="button scrolly">Projects</a></li>
-                            <li><a href="#two" class="button scrolly">Skills</a></li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- PROJECTS (Spotlights) -->
-        <section id="one" class="wrapper style2 spotlights">
-
-            <!-- 1. DIAPHRAGM PUMP -->
-            <section>
-                <a href="https://github.com/MajidMehrnia" class="image project-image" target="_blank" rel="noopener noreferrer">
-                    <img src="images/diaphragm-pump.jpg"
-                         alt="Diaphragm Pump Design"
-                         data-position="center center" />
-                </a>
-                <div class="content">
-                    <div class="inner">
-                        <h2>Diaphragm Pump Design</h2>
-                        <p>
-                            Conceptual Design and Validation of Diaphragm Pumps for Diverse Laboratory Functional Requirements.
-                        </p>
-                        <ul class="actions">
-                            <li><a href="https://github.com/MajidMehrnia" class="button" target="_blank" rel="noopener noreferrer">Learn More</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 2. EV COMPRESSOR -->
-            <section>
-                <a href="https://github.com/MajidMehrnia" class="image project-image" target="_blank" rel="noopener noreferrer">
-                    <img src="images/ev-compressor.jpg"
-                         alt="EV Compressor Design"
-                         data-position="top center" />
-                </a>
-                <div class="content">
-                    <div class="inner">
-                        <h2>EV Compressor Design</h2>
-                        <p>
-                            Compressor engineering tailored for electric vehicle heat pump systems, prioritizing energy efficiency and reliable performance.
-                        </p>
-                        <ul class="actions">
-                            <li><a href="https://github.com/MajidMehrnia" class="button" target="_blank" rel="noopener noreferrer">Learn More</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 3. HYDRAULIC TEST SYSTEM -->
-            <section>
-                <a href="https://github.com/MajidMehrnia" class="image project-image" target="_blank" rel="noopener noreferrer">
-                    <img src="images/hydraulic-test-system.jpg"
-                         alt="Hydraulic Test System"
-                         data-position="25% 25%" />
-                </a>
-                <div class="content">
-                    <div class="inner">
-                        <h2>Hydraulic Test System</h2>
-                        <p>
-                            High-precision hydraulic test bed design, automated control integration, and continuous data acquisition development.
-                        </p>
-                        <ul class="actions">
-                            <li><a href="https://github.com/MajidMehrnia" class="button" target="_blank" rel="noopener noreferrer">Learn More</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-        </section>
-
-        <!-- SKILLS -->
-        <section id="two" class="wrapper style3 fade-up">
-            <div class="inner">
-                <h2>Skills</h2>
-                <div class="features">
-
-                    <section>
-                        <span class="icon solid major fa-cogs"></span>
-                        <h3>Model-Based Design: From Requirements to Validation</h3>
-                        <p>CAD modeling, system analysis, product development and V&V.</p>
-                    </section>
-
-                    <section>
-                        <span class="icon solid major fa-tachometer-alt"></span>
-                        <h3>Simulation & Optimization</h3>
-                        <p> CFD & FSI (ANSYS), 1-D & System Simulation (MATLAB/Simulink/Simscape/Amesim/GT-Suite.</p>
-                    </section>
-
-                    <section>
-                        <span class="icon solid major fa-water"></span>
-                        <h3>Fluid Systems</h3>
-                        <p>Design and analysis of pumps, compressors, heat exchangers, and hydraulic systems.</p>
-                    </section>
-
-                    <section>
-                        <span class="icon solid major fa-tools"></span>
-                        <h3>NPI</h3>
-                        <p>Design for X (DFX), DFSS, VAVE optimization, and continuous improvement.</p>
-                    </section>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="three" class="wrapper style1 fade-up">
-            <div class="inner">
-                <h2>Get in touch</h2>
-                <div class="split style1">
-                    <section>
-                        <ul class="contact">
-                            <li>
-                                <h3>Email</h3>
-                                <a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a>
-                            </li>
-                            <li>
-                                <h3>Social Media</h3>
-                                <ul class="icons">
-                                    <li>
-                                        <a href="https://github.com/MajidMehrnia"
-                                           class="icon brands fa-github"
-                                           target="_blank"
-                                           rel="noopener noreferrer">
-                                            <span class="label">GitHub</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.linkedin.com/"
-                                           class="icon brands fa-linkedin-in"
-                                           target="_blank"
-                                           rel="noopener noreferrer">
-                                            <span class="label">LinkedIn</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </section>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-    <!-- Footer -->
-    <footer id="footer" class="wrapper style1-alt">
-        <div class="inner">
-            <ul class="menu">
-                <li>&copy; Majid Mehrnia. All rights reserved.</li>
-                <li>Design: <a href="https://html5up.net/hyperspace">Hyperspace by HTML5 UP</a></li>
+        <div class="project-content">
+          <div class="inner">
+            <h2>Diaphragm Pump Design</h2>
+            <p>
+              Conceptual Design and Validation of Diaphragm Pumps for Diverse Laboratory Functional Requirements.
+            </p>
+            <ul class="actions">
+              <li>
+                <a
+                  href="https://github.com/MajidMehrnia"
+                  class="button"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Learn More</a>
+              </li>
             </ul>
+          </div>
         </div>
-    </footer>
+      </section>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+      <section class="reveal">
+        <a
+          href="https://github.com/MajidMehrnia"
+          class="project-image"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="EV Compressor Design on GitHub"
+        >
+          <img
+            src="images/ev-compressor.jpg"
+            alt="EV Compressor Design"
+            loading="lazy"
+          >
+        </a>
+
+        <div class="project-content">
+          <div class="inner">
+            <h2>EV Compressor Design</h2>
+            <p>
+              Compressor engineering for electric vehicle heat pump systems, focusing on energy efficiency and reliable performance.
+            </p>
+            <ul class="actions">
+              <li>
+                <a
+                  href="https://github.com/MajidMehrnia"
+                  class="button"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Learn More</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="reveal">
+        <a
+          href="https://github.com/MajidMehrnia"
+          class="project-image"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Hydraulic Test System on GitHub"
+        >
+          <img
+            src="images/hydraulic-test-system.jpg"
+            alt="Hydraulic Test System"
+            loading="lazy"
+          >
+        </a>
+
+        <div class="project-content">
+          <div class="inner">
+            <h2>Hydraulic Test System</h2>
+            <p>
+              High-precision test system design, automated control integration and data acquisition.
+            </p>
+            <ul class="actions">
+              <li>
+                <a
+                  href="https://github.com/MajidMehrnia"
+                  class="button"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Learn More</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </section>
+
+    <!-- SKILLS -->
+    <section id="two" class="wrapper style3">
+      <div class="inner">
+        <h2 class="major">Skills</h2>
+
+        <div class="features">
+
+          <section class="feature">
+            <span class="feature-icon" aria-hidden="true">⌘</span>
+            <h3>Model-Based Engineering</h3>
+            <p>
+              Requirements, system architecture, CAD modeling, integration and verification.
+            </p>
+          </section>
+
+          <section class="feature">
+            <span class="feature-icon" aria-hidden="true">↗</span>
+            <h3>Simulation &amp; Optimization</h3>
+            <p>
+              CFD and FSI (ANSYS), MATLAB/Simulink, Simscape, Amesim and GT-SUITE.
+            </p>
+          </section>
+
+          <section class="feature">
+            <span class="feature-icon" aria-hidden="true">◉</span>
+            <h3>Fluid Systems</h3>
+            <p>
+              Pumps, compressors, turbines, heat exchangers and hydraulic systems.
+            </p>
+          </section>
+
+          <section class="feature">
+            <span class="feature-icon" aria-hidden="true">⚙</span>
+            <h3>NPI &amp; Value Engineering</h3>
+            <p>
+              Stage-Gate, DfX, DFSS, VAVE, design readiness and continuous improvement.
+            </p>
+          </section>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="three" class="wrapper style1">
+      <div class="inner">
+        <h2 class="major">Get in touch</h2>
+        <p class="contact-intro">
+          Feel free to connect to discuss engineering, product development and systems optimization.
+        </p>
+
+        <div class="contact-links">
+          <a
+            href="https://github.com/MajidMehrnia"
+            target="_blank"
+            rel="noopener noreferrer"
+          >GitHub ↗</a>
+
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >LinkedIn ↗</a>
+
+          <a href="mailto:YOUR_EMAIL@example.com">Email ↗</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="inner">
+      <ul class="menu">
+        <li>© Majid Mehrnia. All rights reserved.</li>
+        <li>Inspired by Hyperspace — HTML5 UP.</li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    // Active sidebar link
+    const sections = document.querySelectorAll(
+      '#intro, #one, #two, #three'
+    );
+
+    const navLinks = document.querySelectorAll('#sidebar a');
+
+    const navObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.toggle(
+              'active',
+              link.getAttribute('href') === '#' + entry.target.id
+            );
+          });
+        }
+      });
+    }, {
+      rootMargin: '-25% 0px -55% 0px'
+    });
+
+    sections.forEach(section => navObserver.observe(section));
+
+    // Reveal project sections on scroll
+    const revealElements = document.querySelectorAll('.reveal');
+
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealElements.forEach(element => revealObserver.observe(element));
+    } else {
+      revealElements.forEach(element => element.classList.add('visible'));
+    }
+  </script>
 
 </body>
 </html>
