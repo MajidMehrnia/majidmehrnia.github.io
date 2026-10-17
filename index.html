@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -27,11 +28,13 @@
         }
 
         .intro-profile .profile-photo {
-            width: 12em;
-            height: 12em;
-            flex: 0 0 12em;
-            object-fit: cover;
+            width: 15em;
+            height: 15em;
+            flex: 0 0 15em;
+            object-fit: contain;
+            object-position: center;
             border-radius: 8px;
+            background: rgba(255, 255, 255, 0.06);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
@@ -46,8 +49,10 @@
 
         .skills-extended-list {
             margin-top: 2.5em;
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-            padding-top: 2em;
+            padding: 2em;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 6px;
+            background: rgba(20, 15, 45, 0.35);
         }
 
         .skills-extended-list h3 {
@@ -69,12 +74,15 @@
             text-underline-offset: 3px;
         }
 
-        /* فیت شدن دقیق عکس‌های پروژه‌ها در کادر */
+        /* Fit project images inside their containers */
         .project-image {
             overflow: hidden;
+            display: block;
+            position: relative;
         }
 
         .project-image img {
+            display: block;
             width: 100% !important;
             height: 100% !important;
             object-fit: cover !important;
@@ -89,9 +97,9 @@
             }
 
             .intro-profile .profile-photo {
-                width: 10em;
-                height: 10em;
-                flex-basis: 10em;
+                width: 12em;
+                height: 12em;
+                flex-basis: 12em;
             }
         }
     </style>
@@ -135,15 +143,15 @@
                         </p>
                     </div>
 
-                    <!-- عکس پروفایل در سمت راست -->
+                    <!-- Profile photo -->
                     <img
-                        src="images/profile.jpg"
+                        src="img/profile.jpg"
                         alt="Majid Mehrnia"
                         class="profile-photo"
                     />
                 </div>
 
-                <!-- 3 عنوان اصلی پروژه‌ها در بخش اول -->
+                <!-- 3 main project titles -->
                 <ul class="intro-bullets">
                     <li><strong>Diaphragm Pump Design:</strong> Conceptual design &amp; validation for diverse laboratory requirements.</li>
                     <li><strong>EV Compressor Design:</strong> Thermal management &amp; compressor engineering for electric vehicles.</li>
@@ -173,7 +181,7 @@
             <section>
                 <a href="#three" class="image project-image">
                     <img
-                        src="images/diaphragm-pump.jpg"
+                        src="img/diaphragm-pump.jpg"
                         alt="Diaphragm Pump Design"
                     />
                 </a>
@@ -203,7 +211,7 @@
             <section>
                 <a href="#three" class="image project-image">
                     <img
-                        src="images/ev-compressor.jpg"
+                        src="img/ev-compressor.jpg"
                         alt="EV Compressor Design"
                     />
                 </a>
@@ -234,7 +242,7 @@
             <section>
                 <a href="#three" class="image project-image">
                     <img
-                        src="images/hydraulic-test-system.jpg"
+                        src="img/hydraulic-test-system.jpg"
                         alt="Hydraulic Test System"
                     />
                 </a>
@@ -272,7 +280,7 @@
                     Core competencies spanning product development, systems engineering, digital continuity and operational excellence.
                 </p>
 
-                <!-- 4 مربع اصلی اسکیل -->
+                <!-- 4 main skill boxes -->
                 <div class="features">
 
                     <section>
@@ -316,7 +324,7 @@
 
                 </div>
 
-                <!-- 5 بخش جامع و تخصصی شما زیر مربع‌های اسکیل -->
+                <!-- 5 detailed engineering competencies -->
                 <div class="skills-extended-list">
                     <h3>Detailed Engineering Frameworks &amp; Competencies</h3>
                     <ul>
@@ -324,7 +332,7 @@
                             <strong>NPI/NPD |</strong> Hybrid Agile + Stage-Gate | V-Model | DfX / DFSS |
                             <a
                                 class="certificate-link"
-                                href="images/vave-certificate.jpg"
+                                href="img/vave-certificate.jpg"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >Value Engineering — VAVE for Leaders Certificate</a>
