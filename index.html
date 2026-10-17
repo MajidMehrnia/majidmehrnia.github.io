@@ -123,7 +123,7 @@
             margin: 0;
         }
 
-        /* بخش‌های بازشونده (گالری، ورک‌فلو و ویدیو) */
+        /* بخش‌های بازشونده (گالری، PDF و ویدیو) */
         .toggle-container {
             display: none;
             width: 100%;
@@ -139,6 +139,17 @@
             height: auto;
             display: block;
             margin: 0 auto 1.5em auto;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .toggle-container iframe {
+            width: 100%;
+            max-width: 900px;
+            height: 600px;
+            display: block;
+            margin: 0 auto;
             border-radius: 6px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -170,6 +181,10 @@
 
             #intro .actions {
                 justify-content: flex-start;
+            }
+
+            .toggle-container iframe {
+                height: 400px;
             }
         }
     </style>
@@ -251,7 +266,6 @@
            <!-- Project 1: Diaphragm Pump -->
             <section id="pump-project">
 
-                <!-- دقیقاً مشابه کادر تصویر پروژه‌های بعدی -->
                 <a href="javascript:void(0);" onclick="toggleSection('pump-gallery');" class="image">
                     <img
                         src="imag/diaphragmaction.gif"
@@ -295,16 +309,15 @@
             <!-- بخش کشویی ۱: عکس‌های Project Details (d1 تا d5) -->
             <div id="pump-gallery" class="toggle-container">
                 <img src="imag/d1.jpg" alt="Diaphragm Pump Detail 1" onerror="this.style.display='none';" />
-                <img src="imag/d2.jpg" alt="Diaphragm Pump Detail 2" onerror="this.style.display='none';" />
+                <img src="imag/d2.jpg" alt="Diaphragm Pump Detail 3" onerror="this.style.display='none';" />
                 <img src="imag/d3.jpg" alt="Diaphragm Pump Detail 3" onerror="this.style.display='none';" />
                 <img src="imag/d4.jpg" alt="Diaphragm Pump Detail 4" onerror="this.style.display='none';" />
                 <img src="imag/d5.jpg" alt="Diaphragm Pump Detail 5" onerror="this.style.display='none';" />
             </div>
 
-            <!-- بخش کشویی ۲: عکس‌های Design Workflow (w1 و w2) -->
+            <!-- بخش کشویی ۲: پیش‌نمایش فایل PDF Design Workflow -->
             <div id="pump-workflow" class="toggle-container">
-                <img src="imag/w1.jpg" alt="Design Workflow 1" onerror="this.style.display='none';" />
-                <img src="imag/w2.jpg" alt="Design Workflow 2" onerror="this.style.display='none';" />
+                <iframe src="imag/Design_Workflow.pdf" title="Design Workflow PDF"></iframe>
             </div>
 
             <!-- بخش کشویی ۳: ویدیو Presentation -->
@@ -533,7 +546,7 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- Script to toggle sections (Galleries & Video) -->
+    <!-- Script to toggle sections (Galleries, PDF & Video) -->
     <script>
         function toggleSection(sectionId) {
             var target = document.getElementById(sectionId);
@@ -541,13 +554,11 @@
 
             var isVisible = $(target).is(':visible');
 
-            // اگر ویدیویی در حال پخش باشد، موقع بستن مکس می‌شود
             if (isVisible) {
                 var video = target.querySelector('video');
                 if (video) video.pause();
                 $(target).slideUp(300);
             } else {
-                // بستن سایر بخش‌های باز پروژه اول برای حفظ نظم
                 $('.toggle-container').not('#' + sectionId).slideUp(200);
                 $(target).hide().slideDown(300);
             }
