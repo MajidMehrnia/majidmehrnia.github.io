@@ -119,24 +119,26 @@
             padding: 1em;
         }
 
-        /* تنظیم ظاهر و پس‌زمینه کادر گیف پروژه اول */
+        /* هم‌اندازه شدن کامل کادر عکس پروژه اول با بقیه پروژه‌ها */
         #pump-project .pump-image {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            background: transparent !important;
+            overflow: hidden !important;
+            display: block !important;
+            position: relative !important;
+            background: rgba(0, 0, 0, 0.2) !important;
+            cursor: pointer !important;
             background-image: none !important;
         }
 
         #pump-project .pump-image img {
             display: block !important;
-            max-width: 100% !important;
-            max-height: 100% !important;
-            width: auto !important;
-            height: auto !important;
+            width: 100% !important;
+            height: 100% !important;
             object-fit: contain !important;
-            margin: auto !important;
+            object-position: center center !important;
             padding: 1em !important;
+            margin: 0 !important;
+            max-width: none !important;
+            max-height: none !important;
         }
 
         /* یکسان‌سازی فاصله بالای متن پروژه اول با بقیه پروژه‌ها */
@@ -223,7 +225,7 @@
                         </p>
 
                         <p>
-                          NPI &amp; NPD | Fluid Systems: Pumps, Compressors & Turbines
+                            NPI &amp; NPD | Fluid Systems: Pumps, Compressors &amp; Turbines
                         </p>
                         
                         <!-- دکمه‌ها در سمت راست و زیر متن معرفی -->
@@ -293,10 +295,20 @@
                                 covering different media and pump functions.
                             </p>
 
-                            <ul class="actions">
+                            <ul class="actions" style="flex-wrap: wrap; gap: 0.75em;">
                                 <li>
                                     <a href="javascript:void(0);" onclick="toggleGallery('pump-gallery')" class="button">
                                         Project Details
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="imag/Design_Workflow.docx" target="_blank" rel="noopener noreferrer" class="button">
+                                        Design Workflow
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="YOUR_VIDEO_LINK_HERE" target="_blank" rel="noopener noreferrer" class="button">
+                                        Watch Presentation
                                     </a>
                                 </li>
                             </ul>
