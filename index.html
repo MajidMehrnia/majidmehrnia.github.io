@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -46,7 +47,7 @@
             margin-bottom: 0.6em;
         }
 
-        /* دکمه‌های بخش اول */
+        /* Center the buttons in the welcome section */
         #intro .actions {
             display: flex;
             justify-content: center;
@@ -95,7 +96,36 @@
             text-underline-offset: 3px;
         }
 
-        /* جلوگیری کامل از تکرار و کاشی شدن عکس/گیف و نمایش تکی در مرکز */
+        /* Project 1: show only one GIF inside the image frame */
+        #pump-project .pump-image {
+            display: flex !important;
+            flex: 0 0 40%;
+            width: 40%;
+            min-width: 0;
+            align-items: center !important;
+            justify-content: center !important;
+            align-self: stretch;
+            overflow: hidden !important;
+            position: relative;
+            background: rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        #pump-project .pump-image img {
+            display: block !important;
+            position: static !important;
+            width: 100% !important;
+            height: 100% !important;
+            max-width: 100% !important;
+            max-height: 100% !important;
+            object-fit: contain !important;
+            object-position: center !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            background: transparent !important;
+        }
+
+        /* Keep project 2 and 3 image frames intact */
         .project-image {
             overflow: hidden !important;
             display: flex !important;
@@ -103,26 +133,22 @@
             justify-content: center !important;
             position: relative;
             background: rgba(0, 0, 0, 0.2);
-            cursor: pointer;
         }
 
         .project-image img {
             display: block !important;
             max-width: 100% !important;
             max-height: 100% !important;
-            width: auto !important;
-            height: auto !important;
             object-fit: contain !important;
-            object-position: center center !important;
-            background-repeat: no-repeat !important;
-            background-position: center !important;
+            object-position: center !important;
             margin: auto !important;
         }
 
-        /* استایل کشویی گالری پروژه‌ها */
+        /* Project details gallery: hidden until clicked */
         .project-gallery-toggle {
             display: none;
             width: 100%;
+            box-sizing: border-box;
             background: rgba(10, 8, 25, 0.95);
             padding: 2em;
             box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
@@ -152,13 +178,30 @@
                 height: 12em;
                 flex-basis: 12em;
             }
+
+            #pump-project .pump-image {
+                flex: 0 0 100%;
+                width: 100%;
+                min-height: 18em;
+            }
+        }
+
+        @media screen and (max-width: 736px) {
+            .project-gallery-toggle {
+                padding: 1em;
+            }
+
+            #intro .actions {
+                flex-wrap: wrap;
+                gap: 0.75em;
+            }
         }
     </style>
 </head>
 
 <body class="is-preload">
 
-    <!-- Sidebar: original Hyperspace layout -->
+    <!-- Sidebar -->
     <section id="sidebar">
         <div class="inner">
             <nav>
@@ -183,9 +226,7 @@
                     <div class="intro-copy">
                         <h1>Majid Mehrnia</h1>
 
-                        <p>
-                            Mechanical Engineering | PhD
-                        </p>
+                        <p>Mechanical Engineering | PhD</p>
 
                         <p>
                             Senior Engineer focused on product development,
@@ -194,7 +235,6 @@
                         </p>
                     </div>
 
-                    <!-- Profile photo -->
                     <img
                         src="imag/profile.jpg"
                         alt="Majid Mehrnia"
@@ -202,24 +242,18 @@
                     />
                 </div>
 
-                <!-- 3 main project titles -->
                 <ul class="intro-bullets">
                     <li><strong>Diaphragm Pump Design:</strong> Conceptual design &amp; validation for diverse laboratory requirements.</li>
                     <li><strong>EV Compressor Design:</strong> Thermal management &amp; compressor engineering for electric vehicles.</li>
                     <li><strong>Hydraulic Test System:</strong> High-precision testbed engineering, control &amp; data acquisition.</li>
                 </ul>
 
-                <!-- دکمه‌های وسط‌چین شده -->
                 <ul class="actions">
                     <li>
-                        <a href="#one" class="button scrolly">
-                            Projects
-                        </a>
+                        <a href="#one" class="button scrolly">Projects</a>
                     </li>
                     <li>
-                        <a href="#two" class="button scrolly">
-                            Skills
-                        </a>
+                        <a href="#two" class="button scrolly">Skills</a>
                     </li>
                 </ul>
 
@@ -229,17 +263,27 @@
         <!-- PROJECTS -->
         <section id="one" class="wrapper style2 spotlights">
 
-            <!-- Project 1: Diaphragm Pump (گیف و گالری کشویی) -->
-            <section style="flex-direction: column;">
-                <div style="display: flex; width: 100%; flex-wrap: wrap;">
-                    <a href="javascript:void(0);" onclick="toggleGallery('pump-gallery')" class="image project-image" style="flex: 1 1 40%;">
+            <!-- Project 1: Diaphragm Pump -->
+            <section id="pump-project" style="flex-direction: column;">
+
+                <div class="pump-project-row" style="display: flex; width: 100%; flex-wrap: wrap;">
+
+                    <!-- Only one GIF appears in this frame -->
+                    <a
+                        href="#pump-gallery"
+                        class="image pump-image"
+                        aria-label="Show diaphragm pump project details"
+                        aria-controls="pump-gallery"
+                        aria-expanded="false"
+                        onclick="toggleGallery('pump-gallery', this); return false;"
+                    >
                         <img
                             src="imag/diaphragmaction.gif"
                             alt="Diaphragm Pump Action"
                         />
                     </a>
 
-                    <div class="content" style="flex: 1 1 60%;">
+                    <div class="content" style="flex: 1 1 60%; min-width: 0;">
                         <div class="inner">
                             <h2>Diaphragm Pump Design</h2>
 
@@ -251,7 +295,13 @@
 
                             <ul class="actions">
                                 <li>
-                                    <a href="javascript:void(0);" onclick="toggleGallery('pump-gallery')" class="button">
+                                    <a
+                                        href="#pump-gallery"
+                                        class="button"
+                                        aria-controls="pump-gallery"
+                                        aria-expanded="false"
+                                        onclick="toggleGallery('pump-gallery', this); return false;"
+                                    >
                                         Project Details
                                     </a>
                                 </li>
@@ -260,7 +310,7 @@
                     </div>
                 </div>
 
-                <!-- گالری کشویی ۵ عکس (d1 تا d5) -->
+                <!-- These five images remain hidden until clicked -->
                 <div id="pump-gallery" class="project-gallery-toggle">
                     <img src="imag/d1.jpg" alt="Diaphragm Pump Detail 1" onerror="this.style.display='none';" />
                     <img src="imag/d2.jpg" alt="Diaphragm Pump Detail 2" onerror="this.style.display='none';" />
@@ -268,11 +318,17 @@
                     <img src="imag/d4.jpg" alt="Diaphragm Pump Detail 4" onerror="this.style.display='none';" />
                     <img src="imag/d5.jpg" alt="Diaphragm Pump Detail 5" onerror="this.style.display='none';" />
                 </div>
+
             </section>
 
-            <!-- Project 2: EV Compressor (لینک به GitHub) -->
+            <!-- Project 2: EV Compressor -->
             <section>
-                <a href="https://github.com/MajidMehrnia/Electromechanical-Fluid-Systems-Engineering" target="_blank" rel="noopener noreferrer" class="image project-image">
+                <a
+                    href="https://github.com/MajidMehrnia/Electromechanical-Fluid-Systems-Engineering"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="image project-image"
+                >
                     <img
                         src="imag/ev-compressor.jpg"
                         alt="EV Compressor Design"
@@ -292,7 +348,12 @@
 
                         <ul class="actions">
                             <li>
-                                <a href="https://github.com/MajidMehrnia/Electromechanical-Fluid-Systems-Engineering" target="_blank" rel="noopener noreferrer" class="button">
+                                <a
+                                    href="https://github.com/MajidMehrnia/Electromechanical-Fluid-Systems-Engineering"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="button"
+                                >
                                     Project Details
                                 </a>
                             </li>
@@ -301,9 +362,14 @@
                 </div>
             </section>
 
-            <!-- Project 3: Hydraulic Test System (لینک به Google Drive PDF) -->
+            <!-- Project 3: Hydraulic Test System -->
             <section>
-                <a href="https://drive.google.com/file/d/1851gT98VzbpQXctCNLxGYlBoxhSVcl2G/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="image project-image">
+                <a
+                    href="https://drive.google.com/file/d/1851gT98VzbpQXctCNLxGYlBoxhSVcl2G/view?usp=drive_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="image project-image"
+                >
                     <img
                         src="imag/hydraulic-test-system.jpg"
                         alt="Hydraulic Test System"
@@ -322,7 +388,12 @@
 
                         <ul class="actions">
                             <li>
-                                <a href="https://drive.google.com/file/d/1851gT98VzbpQXctCNLxGYlBoxhSVcl2G/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="button">
+                                <a
+                                    href="https://drive.google.com/file/d/1851gT98VzbpQXctCNLxGYlBoxhSVcl2G/view?usp=drive_link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="button"
+                                >
                                     Project Details
                                 </a>
                             </li>
@@ -343,7 +414,6 @@
                     Core competencies spanning product development, systems engineering, digital continuity and operational excellence.
                 </p>
 
-                <!-- 4 main skill boxes -->
                 <div class="features">
 
                     <section>
@@ -387,9 +457,9 @@
 
                 </div>
 
-                <!-- 5 detailed engineering competencies -->
                 <div class="skills-extended-list">
                     <h3>Detailed Engineering Frameworks &amp; Competencies</h3>
+
                     <ul>
                         <li>
                             <strong>NPI/NPD |</strong> Hybrid Agile + Stage-Gate | V-Model | DfX / DFSS |
@@ -400,15 +470,19 @@
                                 rel="noopener noreferrer"
                             >Value Engineering — VAVE for Leaders Certificate</a>
                         </li>
+
                         <li>
                             <strong>Engineering &amp; Product Strategy |</strong> Technology Roadmapping | Portfolio Management
                         </li>
+
                         <li>
                             <strong>Electromechanical &amp; Complex Fluid Systems |</strong> Pumps, Compressors, Turbines | Systems Engineering | Product Architecture
                         </li>
+
                         <li>
                             <strong>Digital Engineering |</strong> MBSE | Digital Thread | Digital Twin | ECAD/MCAD
                         </li>
+
                         <li>
                             <strong>Operational Excellence |</strong> Quality | Cost | Reliability | On-Time Delivery
                         </li>
@@ -432,16 +506,19 @@
 
                 <div style="display: inline-block; text-align: left;">
                     <ul class="contact">
+
                         <li>
                             <h3>Location</h3>
                             <span>Germany</span>
                         </li>
+
                         <li>
                             <h3>Email</h3>
                             <a href="mailto:YOUR_EMAIL@example.com">
                                 YOUR_EMAIL@example.com
                             </a>
                         </li>
+
                         <li>
                             <h3>LinkedIn</h3>
                             <a
@@ -452,6 +529,7 @@
                                 LinkedIn Profile
                             </a>
                         </li>
+
                         <li>
                             <h3>GitHub</h3>
                             <a
@@ -462,6 +540,7 @@
                                 github.com/MajidMehrnia
                             </a>
                         </li>
+
                     </ul>
                 </div>
 
@@ -489,18 +568,31 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- Script to toggle image gallery -->
+    <!-- Toggle the diaphragm pump gallery -->
     <script>
-        function toggleGallery(galleryId) {
+        function toggleGallery(galleryId, trigger) {
             var gallery = document.getElementById(galleryId);
-            if (gallery.style.display === "block") {
-                $(gallery).slideUp(300, function() {
+
+            if (!gallery) return;
+
+            var isOpen = gallery.style.display === "block";
+
+            if (isOpen) {
+                $(gallery).stop(true, true).slideUp(300, function () {
                     gallery.style.display = "none";
                 });
             } else {
                 gallery.style.display = "block";
-                $(gallery).hide().slideDown(300);
+                $(gallery).hide().stop(true, true).slideDown(300);
             }
+
+            var triggers = document.querySelectorAll(
+                '[aria-controls="' + galleryId + '"]'
+            );
+
+            triggers.forEach(function (item) {
+                item.setAttribute("aria-expanded", String(!isOpen));
+            });
         }
     </script>
 
