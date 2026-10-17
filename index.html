@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -97,9 +96,7 @@
         }
 
         /* =========================================
-           PROJECT IMAGE FRAMES
-           All three project image frames are square
-           and use the same dimensions.
+           PROJECT IMAGE FRAMES & GIF FIX
            ========================================= */
 
         #one.spotlights > section > .image,
@@ -120,7 +117,6 @@
             background: rgba(0, 0, 0, 0.2);
         }
 
-        /* Ensure each frame displays one image element only */
         #one.spotlights > section > .image img,
         #one.spotlights #pump-project .pump-image img {
             display: block !important;
@@ -132,16 +128,21 @@
             max-height: 100% !important;
             object-fit: contain !important;
             object-position: center center !important;
-            margin: 0 !important;
+            background-repeat: no-repeat !important;
+            background-position: center center !important;
+            margin: auto !important;
             padding: 0 !important;
-            background: transparent !important;
             transform: none !important;
         }
 
-        /* Slightly smaller diaphragm GIF */
+        /* Diaphragm pump GIF specific styling to prevent any tiling/zooming */
         #one.spotlights #pump-project .pump-image {
-            padding: 2.5em !important;
+            padding: 1.5em !important;
             cursor: pointer;
+        }
+
+        #one.spotlights #pump-project .pump-image img {
+            object-fit: contain !important;
         }
 
         /* Keep text away from the image */
@@ -291,7 +292,7 @@
 
                 <div style="display: flex; width: 100%; flex-wrap: wrap;">
 
-                    <!-- Single diaphragm GIF -->
+                    <!-- Single diaphragm GIF (No repeat / centered) -->
                     <a
                         href="javascript:void(0);"
                         onclick="toggleGallery('pump-gallery', this);"
