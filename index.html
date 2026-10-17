@@ -46,7 +46,7 @@
             margin-bottom: 0.6em;
         }
 
-        /* زیباتر شدن و وسط‌چین کردن دکمه‌ها در بخش اول */
+        /* دکمه‌های بخش اول */
         #intro .actions {
             display: flex;
             justify-content: center;
@@ -95,12 +95,13 @@
             text-underline-offset: 3px;
         }
 
-        /* فیت شدن کامل عکس‌های پروژه‌ها در کادر بدون زوم یا بریدگی */
+        /* فیت شدن کامل عکس‌های پروژه‌ها در کادر */
         .project-image {
             overflow: hidden;
             display: block;
             position: relative;
             background: rgba(0, 0, 0, 0.2);
+            cursor: pointer;
         }
 
         .project-image img {
@@ -110,6 +111,27 @@
             object-fit: contain !important;
             object-position: center center !important;
             padding: 1em;
+        }
+
+        /* استایل کشویی گالری پروژه‌ها */
+        .project-gallery-toggle {
+            display: none;
+            width: 100%;
+            background: rgba(10, 8, 25, 0.95);
+            padding: 2em;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .project-gallery-toggle img {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            display: block;
+            margin: 0 auto 1.5em auto;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
 
         @media screen and (max-width: 980px) {
@@ -181,7 +203,7 @@
                     <li><strong>Hydraulic Test System:</strong> High-precision testbed engineering, control &amp; data acquisition.</li>
                 </ul>
 
-                <!-- دکمه‌های وسط‌چین شده و جذاب -->
+                <!-- دکمه‌های وسط‌چین شده -->
                 <ul class="actions">
                     <li>
                         <a href="#one" class="button scrolly">
@@ -201,39 +223,50 @@
         <!-- PROJECTS -->
         <section id="one" class="wrapper style2 spotlights">
 
-            <!-- Project 1 -->
-            <section>
-                <a href="#three" class="image project-image">
-                    <img
-                        src="imag/diaphragm-pump.jpg"
-                        alt="Diaphragm Pump Design"
-                    />
-                </a>
+            <!-- Project 1: Diaphragm Pump (باز شونده) -->
+            <section style="flex-direction: column;">
+                <div style="display: flex; width: 100%; flex-wrap: wrap;">
+                    <a href="javascript:void(0);" onclick="toggleGallery('pump-gallery')" class="image project-image" style="flex: 1 1 40%;">
+                        <img
+                            src="imag/diaphragm-pump.jpg"
+                            alt="Diaphragm Pump Design"
+                        />
+                    </a>
 
-                <div class="content">
-                    <div class="inner">
-                        <h2>Diaphragm Pump Design</h2>
+                    <div class="content" style="flex: 1 1 60%;">
+                        <div class="inner">
+                            <h2>Diaphragm Pump Design</h2>
 
-                        <p>
-                            Conceptual design and validation of diaphragm pumps
-                            for diverse laboratory functional requirements,
-                            covering different media and operating functions.
-                        </p>
+                            <p>
+                                Conceptual design and validation of diaphragm pumps
+                                for diverse laboratory functional requirements,
+                                covering different media and operating functions.
+                            </p>
 
-                        <ul class="actions">
-                            <li>
-                                <a href="#three" class="button">
-                                    Project Details
-                                </a>
-                            </li>
-                        </ul>
+                            <ul class="actions">
+                                <li>
+                                    <a href="javascript:void(0);" onclick="toggleGallery('pump-gallery')" class="button">
+                                        Project Details
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
+                </div>
+
+                <!-- گالری کشویی ۵ عکس (d1 تا d5) -->
+                <div id="pump-gallery" class="project-gallery-toggle">
+                    <img src="imag/d1.jpg" alt="Diaphragm Pump Detail 1" onerror="this.style.display='none';" />
+                    <img src="imag/d2.jpg" alt="Diaphragm Pump Detail 2" onerror="this.style.display='none';" />
+                    <img src="imag/d3.jpg" alt="Diaphragm Pump Detail 3" onerror="this.style.display='none';" />
+                    <img src="imag/d4.jpg" alt="Diaphragm Pump Detail 4" onerror="this.style.display='none';" />
+                    <img src="imag/d5.jpg" alt="Diaphragm Pump Detail 5" onerror="this.style.display='none';" />
                 </div>
             </section>
 
-            <!-- Project 2 -->
+            <!-- Project 2: EV Compressor (لینک به GitHub) -->
             <section>
-                <a href="#three" class="image project-image">
+                <a href="https://github.com/MajidMehrnia/Electromechanical-Fluid-Systems-Engineering" target="_blank" rel="noopener noreferrer" class="image project-image">
                     <img
                         src="imag/ev-compressor.jpg"
                         alt="EV Compressor Design"
@@ -253,7 +286,7 @@
 
                         <ul class="actions">
                             <li>
-                                <a href="#three" class="button">
+                                <a href="https://github.com/MajidMehrnia/Electromechanical-Fluid-Systems-Engineering" target="_blank" rel="noopener noreferrer" class="button">
                                     Project Details
                                 </a>
                             </li>
@@ -262,9 +295,9 @@
                 </div>
             </section>
 
-            <!-- Project 3 -->
+            <!-- Project 3: Hydraulic Test System (لینک به Google Drive PDF) -->
             <section>
-                <a href="#three" class="image project-image">
+                <a href="https://drive.google.com/file/d/1851gT98VzbpQXctCNLxGYlBoxhSVcl2G/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="image project-image">
                     <img
                         src="imag/hydraulic-test-system.jpg"
                         alt="Hydraulic Test System"
@@ -283,7 +316,7 @@
 
                         <ul class="actions">
                             <li>
-                                <a href="#three" class="button">
+                                <a href="https://drive.google.com/file/d/1851gT98VzbpQXctCNLxGYlBoxhSVcl2G/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="button">
                                     Project Details
                                 </a>
                             </li>
@@ -449,6 +482,21 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <!-- Script to toggle image gallery -->
+    <script>
+        function toggleGallery(galleryId) {
+            var gallery = document.getElementById(galleryId);
+            if (gallery.style.display === "block") {
+                $(gallery).slideUp(300, function() {
+                    gallery.style.display = "none";
+                });
+            } else {
+                gallery.style.display = "block";
+                $(gallery).hide().slideDown(300);
+            }
+        }
+    </script>
 
 </body>
 </html>
