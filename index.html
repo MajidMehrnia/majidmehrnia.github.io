@@ -266,7 +266,7 @@
            <!-- Project 1: Diaphragm Pump -->
             <section id="pump-project">
 
-                <a href="javascript:void(0);" onclick="toggleSection('pump-gallery');" class="image">
+                <a href="javascript:void(0);" onclick="toggleSection('pump-workflow');" class="image">
                     <img
                         src="imag/diaphragmaction.gif"
                         alt="Diaphragm Pump Action"
@@ -283,13 +283,8 @@
                             covering different media and pump functions.
                         </p>
 
-                        <!-- ۳ دکمه در یک راستا -->
+                        <!-- ۲ دکمه در یک راستا -->
                         <ul class="actions">
-                            <li>
-                                <a href="javascript:void(0);" onclick="toggleSection('pump-gallery');" class="button">
-                                    Project Details
-                                </a>
-                            </li>
                             <li>
                                 <a href="javascript:void(0);" onclick="toggleSection('pump-workflow');" class="button">
                                     Design Workflow
@@ -306,21 +301,12 @@
 
             </section>
 
-            <!-- بخش کشویی ۱: عکس‌های Project Details (d1 تا d5) -->
-            <div id="pump-gallery" class="toggle-container">
-                <img src="imag/d1.jpg" alt="Diaphragm Pump Detail 1" onerror="this.style.display='none';" />
-                <img src="imag/d2.jpg" alt="Diaphragm Pump Detail 3" onerror="this.style.display='none';" />
-                <img src="imag/d3.jpg" alt="Diaphragm Pump Detail 3" onerror="this.style.display='none';" />
-                <img src="imag/d4.jpg" alt="Diaphragm Pump Detail 4" onerror="this.style.display='none';" />
-                <img src="imag/d5.jpg" alt="Diaphragm Pump Detail 5" onerror="this.style.display='none';" />
-            </div>
-
-            <!-- بخش کشویی ۲: پیش‌نمایش فایل PDF Design Workflow -->
+            <!-- بخش کشویی ۱: پیش‌نمایش فایل PDF Design Workflow -->
             <div id="pump-workflow" class="toggle-container">
                 <iframe src="imag/Design_Workflow.pdf" title="Design Workflow PDF"></iframe>
             </div>
 
-            <!-- بخش کشویی ۳: ویدیو Presentation -->
+            <!-- بخش کشویی ۲: ویدیو Presentation -->
             <div id="pump-video" class="toggle-container">
                 <video controls preload="metadata">
                     <source src="imag/watch.mp4" type="video/mp4">
@@ -546,7 +532,7 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- Script to toggle sections (Galleries, PDF & Video) -->
+    <!-- Script to toggle sections (PDF & Video) -->
     <script>
         function toggleSection(sectionId) {
             var target = document.getElementById(sectionId);
