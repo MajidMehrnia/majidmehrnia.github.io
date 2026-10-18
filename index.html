@@ -170,7 +170,7 @@
             max-width: 900px;
             height: auto;
             display: block;
-            margin: 0 auto;
+            margin: 0 auto 1.5em auto;
             border-radius: 6px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -343,10 +343,14 @@
                 <iframe src="imag/Design_Workflow.pdf" title="Design Workflow PDF" style="margin-bottom: 0;"></iframe>
             </div>
 
-            <!-- بخش کشویی ۲: ویدیو Presentation -->
+            <!-- بخش کشویی ۲: نمایش پشت سر هم ویدیوهای v1.mp4 و v2.mp4 -->
             <div id="pump-video" class="toggle-container">
                 <video controls preload="metadata">
-                    <source src="imag/watch.mp4" type="video/mp4">
+                    <source src="imag/v1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video controls preload="metadata" style="margin-bottom: 0;">
+                    <source src="imag/v2.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -578,8 +582,8 @@
             var isVisible = $(target).is(':visible');
 
             if (isVisible) {
-                var video = target.querySelector('video');
-                if (video) video.pause();
+                var videos = target.querySelectorAll('video');
+                videos.forEach(function(v) { v.pause(); });
                 $(target).slideUp(300);
             } else {
                 $('.toggle-container').not('#' + sectionId).slideUp(200);
