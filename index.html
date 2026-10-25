@@ -56,10 +56,10 @@
             line-height: 1.6;
         }
 
-        /* دکمه‌های کوچک مشکی داخل بولت‌پوینت‌های بالا */
+        /* استایل دکمه‌های کوچک مشکی Watch و Read در بولت‌پوینت‌های بالا */
         .inline-btn-group {
             display: inline-flex;
-            gap: 0.5em;
+            gap: 0.4em;
             margin-left: 0.8em;
             vertical-align: middle;
         }
@@ -68,7 +68,7 @@
             background: #111111 !important;
             color: #ffffff !important;
             border: 1px solid rgba(255, 255, 255, 0.3) !important;
-            padding: 0.15em 0.7em !important;
+            padding: 0.1em 0.6em !important;
             font-size: 0.75em !important;
             font-weight: 600;
             height: auto !important;
@@ -318,27 +318,52 @@
                 <!-- عنوان درشت بالای ۴ بولت پروژه -->
                 <h3 class="intro-bullets-title">Engineering Projects | Last 5 Years</h3>
 
-                <!-- ۴ عنوان پروژه همراه با دکمه‌های کوچک Read و Watch در پروژه اول و دوم -->
+                <!-- ۴ عنوان پروژه همراه با دکمه‌های Watch و Read در پروژه اول و دوم -->
                 <ul class="intro-bullets">
                     <li>
-                        <strong>Diaphragm Pump Design & Simulation Platform:</strong> 
-                        Parametric Design and Validation for Laboratory Applications.
+                        <strong>Diaphragm Pump Design & Simulation Platform:</strong> Parametric Design and Validation for Laboratory Applications.
                         <span class="inline-btn-group">
-                            <a href="javascript:void(0);" onclick="toggleSection('pump-workflow');" class="small-black-btn">Read</a>
-                            <a href="javascript:void(0);" onclick="toggleSection('pump-video');" class="small-black-btn">Watch</a>
+                            <a href="javascript:void(0);" onclick="toggleSection('top-pump-video');" class="small-black-btn">Watch</a>
+                            <a href="javascript:void(0);" onclick="toggleSection('top-pump-workflow');" class="small-black-btn">Read</a>
                         </span>
                     </li>
                     <li>
-                        <strong>Design of a High-Viscosity Pump Test Bench:</strong> 
-                        VDMA FKM project for pumps and systems trade association.
+                        <strong>Design of a High-Viscosity Pump Test Bench:</strong> VDMA FKM project for pumps and systems trade association.
                         <span class="inline-btn-group">
-                            <a href="javascript:void(0);" onclick="toggleSection('screw-pdf');" class="small-black-btn">Read</a>
-                            <a href="javascript:void(0);" onclick="toggleSection('screw-video');" class="small-black-btn">Watch</a>
+                            <a href="javascript:void(0);" onclick="toggleSection('top-screw-video');" class="small-black-btn">Watch</a>
+                            <a href="javascript:void(0);" onclick="toggleSection('top-screw-pdf');" class="small-black-btn">Read</a>
                         </span>
                     </li>
                     <li><strong>Scroll Compressor Development:</strong> Co-Simulation & Performance Optimization for EV Heat Pumps Systems.</li>
                     <li><strong>Hydraulic Test System:</strong> Design, development, and industrialization of a precision test system.</li>
                 </ul>
+
+                <!-- بخش‌های کشویی مربوط به دکمه‌های بالای صفحه -->
+                <div id="top-pump-video" class="toggle-container" style="margin-top: 1.5em;">
+                    <video controls preload="metadata">
+                        <source src="imag/v1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <video controls preload="metadata" style="margin-bottom: 0;">
+                        <source src="imag/v2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div id="top-pump-workflow" class="toggle-container" style="margin-top: 1.5em;">
+                    <iframe src="imag/Design_Workflow.pdf" title="Design Workflow PDF" style="margin-bottom: 0;"></iframe>
+                </div>
+
+                <div id="top-screw-video" class="toggle-container" style="margin-top: 1.5em;">
+                    <video controls preload="metadata" style="margin-bottom: 0;">
+                        <source src="imag/screw.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div id="top-screw-pdf" class="toggle-container" style="margin-top: 1.5em;">
+                    <iframe src="https://drive.google.com/file/d/1c9gE3tQFtHuEZi5fD1900KYD8xB_Kenf/preview" title="Selected Presentation PDF" style="margin-bottom: 0;"></iframe>
+                </div>
 
             </div>
         </section>
@@ -346,10 +371,10 @@
         <!-- PROJECTS -->
         <section id="one" class="wrapper style2 spotlights">
 
-           <!-- Project 1: Diaphragm Pump -->
+            <!-- Project 1: Diaphragm Pump -->
             <section id="pump-project">
 
-                <a href="#pump-workflow" class="image" onclick="toggleSection('pump-workflow'); return false;">
+                <a href="javascript:void(0);" onclick="toggleSection('pump-workflow');" class="image">
                     <img
                         src="imag/diaphragmaction.gif"
                         alt="Diaphragm Pump Action"
@@ -366,10 +391,16 @@
                             covering different media and pump functions.
                         </p>
 
+                        <!-- ۲ دکمه در یک راستا -->
                         <ul class="actions">
                             <li>
                                 <a href="javascript:void(0);" onclick="toggleSection('pump-workflow');" class="button">
-                                    Project Details
+                                    Design Workflow
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="toggleSection('pump-video');" class="button">
+                                    Watch Presentation
                                 </a>
                             </li>
                         </ul>
@@ -395,9 +426,9 @@
                 </video>
             </div>
 
-            <!-- Project 2: Screw Pump Test Bench -->
+            <!-- Project 2 (قبلاً پروژه سوم بود): Screw Pump Test Bench -->
             <section>
-                <a href="https://drive.google.com/file/d/1c9gE3tQFtHuEZi5fD1900KYD8xB_Kenf/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="image">
+                <a href="javascript:void(0);" onclick="toggleSection('screw-pdf');" class="image">
                     <img
                         src="imag/screw.jpg"
                         alt="Screw Pump Test Bench"
@@ -414,10 +445,16 @@
                             pumps.
                         </p>
 
+                        <!-- دو دکمه درخواست شده (Watch Presentation و Selected Presentation) -->
                         <ul class="actions">
                             <li>
-                                <a href="https://drive.google.com/file/d/1c9gE3tQFtHuEZi5fD1900KYD8xB_Kenf/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="button">
-                                    Project Details
+                                <a href="javascript:void(0);" onclick="toggleSection('screw-pdf');" class="button">
+                                    Selected Presentation
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="toggleSection('screw-video');" class="button">
+                                    Watch Presentation
                                 </a>
                             </li>
                         </ul>
@@ -425,12 +462,12 @@
                 </div>
             </section>
 
-            <!-- بخش کشویی PDF پروژه دوم (Read) -->
+            <!-- بخش کشویی PDF پروژه دوم (Selected Presentation) -->
             <div id="screw-pdf" class="toggle-container">
                 <iframe src="https://drive.google.com/file/d/1c9gE3tQFtHuEZi5fD1900KYD8xB_Kenf/preview" title="Selected Presentation PDF" style="margin-bottom: 0;"></iframe>
             </div>
 
-            <!-- بخش کشویی ویدیو پروژه دوم (Watch - screw.mp4) -->
+            <!-- بخش کشویی ویدیو پروژه دوم (screw.mp4) -->
             <div id="screw-video" class="toggle-container">
                 <video controls preload="metadata" style="margin-bottom: 0;">
                     <source src="imag/screw.mp4" type="video/mp4">
@@ -438,7 +475,7 @@
                 </video>
             </div>
 
-            <!-- Project 3: EV Compressor -->
+            <!-- Project 3 (قبلاً پروژه دوم بود): EV Compressor -->
             <section>
                 <a href="https://github.com/MajidMehrnia/Electromechanical-Fluid-Systems-Engineering" target="_blank" rel="noopener noreferrer" class="image">
                     <img
@@ -528,7 +565,7 @@
                         <span class="icon solid major fa-cogs"></span>
                         <h3>Systems Engineering</h3>
                         <p>
-                            MBSE, Electromechanical systems, pumps, compressors,
+                            MBSE, Electromechanical systems, pumps, compressors, 
                         </p>
                     </section>
 
