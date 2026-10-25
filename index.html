@@ -120,15 +120,15 @@
             object-position: center;
         }
 
-        /* تنظیم دکمه‌های پروژه اول در یک راستا */
-        #pump-project .actions {
+        /* تنظیم دکمه‌های پروژه‌ها در یک راستا */
+        .spotlights .actions {
             display: flex;
             flex-wrap: wrap;
             gap: 1em;
             margin-top: 1.5em;
         }
 
-        #pump-project .actions li {
+        .spotlights .actions li {
             padding: 0;
             margin: 0;
         }
@@ -287,11 +287,11 @@
                 <!-- عنوان درشت بالای ۴ بولت پروژه -->
                 <h3 class="intro-bullets-title">Engineering Projects | Last 5 Years</h3>
 
-                <!-- ۴ عنوان پروژه -->
+                <!-- ۴ عنوان پروژه (جایگاه پروژه سوم و دوم جابجا شد) -->
                 <ul class="intro-bullets">
                     <li><strong>Diaphragm Pump Design & Simulation Platform:</strong> Parametric Design and Validation for Laboratory Applications.</li>
+                    <li><strong>Design of a High-Viscosity Pump Test Bench:</strong> VDMA FKM project for pumps and systems trade association.</li>
                     <li><strong>Scroll Compressor Development:</strong> Co-Simulation & Performance Optimization for EV Heat Pumps Systems.</li>
-                    <li><strong>High-Viscosity Pump Test System:</strong> Design and Development for Screw and Gear Pump Testing.</li>
                     <li><strong>Hydraulic Test System:</strong> Design, development, and industrialization of a precision test system.</li>
                 </ul>
 
@@ -356,7 +356,56 @@
                 </video>
             </div>
 
-            <!-- Project 2: EV Compressor (لینک به GitHub) -->
+            <!-- Project 2 (قبلاً پروژه سوم بود): Screw Pump Test Bench -->
+            <section>
+                <a href="javascript:void(0);" onclick="toggleSection('screw-pdf');" class="image">
+                    <img
+                        src="imag/screw.jpg"
+                        alt="Screw Pump Test Bench"
+                    />
+                </a>
+
+                <div class="content">
+                    <div class="inner">
+                        <h2>Design of a High-Viscosity Pump Test Bench</h2>
+
+                        <p>
+                            Delivered VDMA FKM Project for the Pumps + Systems trade association,
+                            conducting technical reviews and engineering assessments of screw and gear
+                            pumps.
+                        </p>
+
+                        <!-- دو دکمه درخواست شده (Watch Presentation و Selected Presentation) -->
+                        <ul class="actions">
+                            <li>
+                                <a href="javascript:void(0);" onclick="toggleSection('screw-pdf');" class="button">
+                                    Selected Presentation
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="toggleSection('screw-video');" class="button">
+                                    Watch Presentation
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- بخش کشویی PDF پروژه دوم (Selected Presentation) -->
+            <div id="screw-pdf" class="toggle-container">
+                <iframe src="https://drive.google.com/file/d/1c9gE3tQFtHuEZi5fD1900KYD8xB_Kenf/preview" title="Selected Presentation PDF" style="margin-bottom: 0;"></iframe>
+            </div>
+
+            <!-- بخش کشویی ویدیو پروژه دوم (screw.mp4) -->
+            <div id="screw-video" class="toggle-container">
+                <video controls preload="metadata" style="margin-bottom: 0;">
+                    <source src="imag/screw.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Project 3 (قبلاً پروژه دوم بود): EV Compressor -->
             <section>
                 <a href="https://github.com/MajidMehrnia/Electromechanical-Fluid-Systems-Engineering" target="_blank" rel="noopener noreferrer" class="image">
                     <img
@@ -387,37 +436,7 @@
                 </div>
             </section>
 
-            <!-- Project 3: Screw Pump Test Bench (با لینک گوگل درایو) -->
-            <section>
-                <a href="https://drive.google.com/file/d/1c9gE3tQFtHuEZi5fD1900KYD8xB_Kenf/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="image">
-                    <img
-                        src="imag/screw.jpg"
-                        alt="Screw Pump Test Bench"
-                    />
-                </a>
-
-                <div class="content">
-                    <div class="inner">
-                        <h2>Design of a High-Viscosity Pump Test Bench</h2>
-
-                        <p>
-                            Delivered VDMA FKM Project for the Pumps + Systems trade association,
-                            conducting technical reviews and engineering assessments of screw and gear
-                            pumps.
-                        </p>
-
-                        <ul class="actions">
-                            <li>
-                                <a href="https://drive.google.com/file/d/1c9gE3tQFtHuEZi5fD1900KYD8xB_Kenf/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="button">
-                                    Project Details
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Project 4: Hydraulic Test System (لینک به Google Drive PDF) -->
+            <!-- Project 4: Hydraulic Test System -->
             <section>
                 <a href="https://drive.google.com/file/d/1851gT98VzbpQXctCNLxGYlBoxhSVcl2G/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="image">
                     <img
@@ -588,7 +607,7 @@
         <div class="inner">
             <ul class="menu">
                 <li>&copy; Majid Mehrnia. All rights reserved.</li>
-                        </ul>
+            </ul>
         </div>
     </footer>
 
