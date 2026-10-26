@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>Majid Mehrnia | Engineering Portfolio</title>
+    <title>Majid Mehrnia | Engineering Leadership</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="description" content="Majid Mehrnia, PhD Mechanical Engineering — Engineering Strategy, NPI/NPD, Electromechanical Systems and Digital Engineering." />
@@ -81,7 +81,12 @@
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
-        /* استایل‌های بخش مراحل چرخه حیات پمپ (NPI Process Flow) */
+        /* استایل تصویر جدید Matrix در بخش بالا */
+        .rf-matrix-container {
+            margin-top: 3.5em;
+            margin-bottom: 3em;
+        }
+
         .npi-section-title {
             font-size: 1.4em;
             font-weight: 700;
@@ -93,63 +98,14 @@
             padding-left: 0.6em;
         }
 
-        .npi-timeline-container {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 1.2em;
-            margin-bottom: 3.5em;
-        }
-
-        .npi-card {
-            background: rgba(25, 25, 45, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+        .rf-matrix-img {
+            width: 100%;
+            height: auto;
+            display: block;
             border-radius: 8px;
-            padding: 1.2em 1em;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .npi-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(59, 130, 246, 0.6);
-        }
-
-        .npi-card-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 0.8em;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 0.6em;
-        }
-
-        .npi-step-num {
-            font-size: 1.4em;
-            font-weight: 800;
-            color: #3b82f6;
-        }
-
-        .npi-card h4 {
-            font-size: 0.95em;
-            font-weight: 700;
-            color: #ffffff;
-            margin: 0;
-            letter-spacing: 0.05em;
-        }
-
-        .npi-card ul {
-            list-style: disc;
-            padding-left: 1.2em;
-            margin: 0;
-        }
-
-        .npi-card ul li {
-            font-size: 0.78em;
-            color: #cbd5e1;
-            margin-bottom: 0.4em;
-            line-height: 1.4;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            background: #ffffff;
         }
 
         .intro-bullets-title {
@@ -322,12 +278,6 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
 
-        @media screen and (max-width: 1200px) {
-            .npi-timeline-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
         @media screen and (max-width: 980px) {
             .intro-profile {
                 flex-direction: column-reverse;
@@ -339,10 +289,6 @@
                 width: 12em;
                 height: 12em;
                 flex-basis: 12em;
-            }
-
-            .npi-timeline-container {
-                grid-template-columns: 1fr;
             }
 
             #intro .actions {
@@ -389,7 +335,7 @@
                         </p>
 
                         <p class="intro-subtitle-sub">
-                            NPI &amp; NPD | Positive Displacement Pumps
+                            NPI &amp; NPD of Positive Displacement Pumps
                         </p>
                         
                         <!-- ۴ دکمه هم‌اندازه و در یک راستا -->
@@ -428,81 +374,10 @@
                     />
                 </div>
 
-                <!-- بخش چرخه حیات توسعه محصول (NPI Lifecycle مخصوص پمپ) -->
-                <div style="margin-top: 3.5em; margin-bottom: 2.5em;">
-                    <div class="npi-section-title">New Product Development (NPD/NPI) Lifecycle</div>
-                    
-                    <div class="npi-timeline-container">
-                        <!-- مرحله ۱: Feasibility -->
-                        <div class="npi-card">
-                            <div class="npi-card-header">
-                                <span class="npi-step-num">01</span>
-                                <h4>FEASIBILITY</h4>
-                            </div>
-                            <ul>
-                                <li>Hydraulic & Flow Requirements</li>
-                                <li>Market Opportunity Analysis</li>
-                                <li>Fluid Compatibility & Viscosity</li>
-                                <li>Cost & Cost-to-Serve Estimation</li>
-                            </ul>
-                        </div>
-
-                        <!-- مرحله ۲: Concept -->
-                        <div class="npi-card">
-                            <div class="npi-card-header">
-                                <span class="npi-step-num">02</span>
-                                <h4>CONCEPT</h4>
-                            </div>
-                            <ul>
-                                <li>Pump Architecture Selection</li>
-                                <li>1D/3D Multi-Physics Modeling</li>
-                                <li>Initial Sizing & Layout</li>
-                                <div>Technology Roadmapping</div>
-                            </ul>
-                        </div>
-
-                        <!-- مرحله ۳: Development -->
-                        <div class="npi-card">
-                            <div class="npi-card-header">
-                                <span class="npi-step-num">03</span>
-                                <h4>DEVELOPMENT</h4>
-                            </div>
-                            <ul>
-                                <li>Detailed CAD & Simulations</li>
-                                <li>Prototyping & Test Rig Setup</li>
-                                <li>DFMEA & Risk Assessment</li>
-                                <li>Design Freeze & eBOM Lock</li>
-                            </ul>
-                        </div>
-
-                        <!-- مرحله ۴: Qualification -->
-                        <div class="npi-card">
-                            <div class="npi-card-header">
-                                <span class="npi-step-num">04</span>
-                                <h4>QUALIFICATION</h4>
-                            </div>
-                            <ul>
-                                <li>Performance & Endurance Testing</li>
-                                <li>Cavitation & Efficiency Validation</li>
-                                <div>Process Validation & Quality Audit</div>
-                                <li>Reliability Verification</li>
-                            </ul>
-                        </div>
-
-                        <!-- مرحله ۵: Pre-Production -->
-                        <div class="npi-card">
-                            <div class="npi-card-header">
-                                <span class="npi-step-num">05</span>
-                                <h4>PRE-PRODUCTION</h4>
-                            </div>
-                            <ul>
-                                <li>Pilot Run & First Article Inspection</li>
-                                <li>Production Transfer & SOP Release</li>
-                                <li>Supply Chain & Tooling Readiness</li>
-                                <li>Manufacturing Handover</li>
-                            </ul>
-                        </div>
-                    </div>
+                <!-- بخش جدول Readiness Freeze Matrix (جایگزین ۵ کادر) -->
+                <div class="rf-matrix-container">
+                    <div class="npi-section-title">Readiness Freeze Matrix (RF Matrix)</div>
+                    <img src="imag/rf-matrix.png" alt="Readiness Freeze Matrix" class="rf-matrix-img" />
                 </div>
 
                 <!-- بخش کشویی نمایش فایل CV.pdf -->
