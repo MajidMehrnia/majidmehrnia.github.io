@@ -398,13 +398,20 @@
                 <!-- عنوان درشت بالای ۴ بولت پروژه -->
                 <h3 class="intro-bullets-title">Engineering Projects | Last 5 Years</h3>
 
-                <!-- ۴ عنوان پروژه همراه با دکمه‌های Watch و Read در پروژه اول و دوم -->
+                <!-- بولت‌پوینت‌ها همراه با پروژه جدید در ردیف دوم -->
                 <ul class="intro-bullets">
                     <li>
                         <strong>Diaphragm Pump Design Platform:</strong> Parametric Design for Laboratory Applications.
                         <span class="inline-btn-group">
                             <a href="javascript:void(0);" onclick="toggleSection('top-pump-video');" class="small-black-btn">Watch</a>
                             <a href="javascript:void(0);" onclick="toggleSection('top-pump-workflow');" class="small-black-btn">Read</a>
+                        </span>
+                    </li>
+                    <li>
+                        <strong>Peristaltic Blood Pump:</strong> Design and Performance Optimization for Hemodialysis.
+                        <span class="inline-btn-group">
+                            <a href="javascript:void(0);" onclick="toggleSection('top-peri-video');" class="small-black-btn">Watch</a>
+                            <a href="javascript:void(0);" onclick="toggleSection('top-peri-workflow');" class="small-black-btn">Read</a>
                         </span>
                     </li>
                     <li>
@@ -432,6 +439,17 @@
 
                 <div id="top-pump-workflow" class="toggle-container" style="margin-top: 1.5em;">
                     <iframe src="imag/Design_Workflow.pdf" title="Design Workflow PDF" style="margin-bottom: 0;"></iframe>
+                </div>
+
+                <div id="top-peri-video" class="toggle-container" style="margin-top: 1.5em;">
+                    <video controls preload="metadata" style="margin-bottom: 0;">
+                        <source src="imag/Peristaltic.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div id="top-peri-workflow" class="toggle-container" style="margin-top: 1.5em;">
+                    <iframe src="imag/Peristaltic_Design_Workflow.pdf" title="Peristaltic Design Workflow PDF" style="margin-bottom: 0;"></iframe>
                 </div>
 
                 <div id="top-screw-video" class="toggle-container" style="margin-top: 1.5em;">
@@ -498,12 +516,12 @@
 
             </section>
 
-            <!-- بخش کشویی ۱: پیش‌نمایش فایل PDF Design Workflow -->
+            <!-- بخش کشویی ۱ پروژه ۱ -->
             <div id="pump-workflow" class="toggle-container">
                 <iframe src="imag/Design_Workflow.pdf" title="Design Workflow PDF" style="margin-bottom: 0;"></iframe>
             </div>
 
-            <!-- بخش کشویی ۲: نمایش پشت سر هم ویدیوهای v1.mp4 و v2.mp4 -->
+            <!-- بخش کشویی ۲ پروژه ۱ -->
             <div id="pump-video" class="toggle-container">
                 <video controls preload="metadata">
                     <source src="imag/v1.mp4" type="video/mp4">
@@ -515,7 +533,55 @@
                 </video>
             </div>
 
-            <!-- Project 2: Screw Pump Test Bench -->
+            <!-- Project 2: Peristaltic Blood Pump (پروژه جدید ردیف دوم) -->
+            <section id="peri-project">
+
+                <a href="javascript:void(0);" onclick="toggleSection('peri-workflow');" class="image">
+                    <img
+                        src="imag/Peri.jpg"
+                        alt="Peristaltic Blood Pump"
+                    />
+                </a>
+
+                <div class="content">
+                    <div class="inner">
+                        <h2>Peristaltic Blood Pump</h2>
+
+                        <p>
+                            Design and Performance Optimization for Hemodialysis applications, focusing on precise fluid dynamics, occlusion dynamics, and structural integrity.
+                        </p>
+
+                        <ul class="actions">
+                            <li>
+                                <a href="javascript:void(0);" onclick="toggleSection('peri-workflow');" class="button">
+                                    Design Workflow
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="toggleSection('peri-video');" class="button">
+                                    Watch Presentation
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- بخش کشویی PDF پروژه دوم جدید -->
+            <div id="peri-workflow" class="toggle-container">
+                <iframe src="imag/Peristaltic_Design_Workflow.pdf" title="Peristaltic Design Workflow PDF" style="margin-bottom: 0;"></iframe>
+            </div>
+
+            <!-- بخش کشویی ویدیو پروژه دوم جدید -->
+            <div id="peri-video" class="toggle-container">
+                <video controls preload="metadata" style="margin-bottom: 0;">
+                    <source src="imag/Peristaltic.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Project 3: Screw Pump Test Bench -->
             <section>
                 <a href="javascript:void(0);" onclick="toggleSection('screw-pdf');" class="image">
                     <img
@@ -550,12 +616,12 @@
                 </div>
             </section>
 
-            <!-- بخش کشویی PDF پروژه دوم (Selected Presentation) -->
+            <!-- بخش کشویی PDF پروژه سوم (Selected Presentation) -->
             <div id="screw-pdf" class="toggle-container">
                 <iframe src="https://drive.google.com/file/d/1c9gE3tQFtHuEZi5fD1900KYD8xB_Kenf/preview" title="Selected Presentation PDF" style="margin-bottom: 0;"></iframe>
             </div>
 
-            <!-- بخش کشویی ویدیو پروژه دوم (screw.mp4) -->
+            <!-- بخش کشویی ویدیو پروژه سوم (screw.mp4) -->
             <div id="screw-video" class="toggle-container">
                 <video controls preload="metadata" style="margin-bottom: 0;">
                     <source src="imag/screw.mp4" type="video/mp4">
@@ -563,7 +629,7 @@
                 </video>
             </div>
 
-            <!-- Project 3: EV Compressor -->
+            <!-- Project 4: EV Compressor -->
             <section>
                 <a href="https://github.com/MajidMehrnia/Electromechanical-Fluid-Systems-Engineering" target="_blank" rel="noopener noreferrer" class="image">
                     <img
@@ -594,7 +660,7 @@
                 </div>
             </section>
 
-            <!-- Project 4: Hydraulic Test System -->
+            <!-- Project 5: Hydraulic Test System -->
             <section>
                 <a href="https://drive.google.com/file/d/1851gT98VzbpQXctCNLxGYlBoxhSVcl2G/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="image">
                     <img
