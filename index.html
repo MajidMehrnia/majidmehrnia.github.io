@@ -167,20 +167,29 @@
             color: #ffffff !important;
         }
 
-        /* دکمه‌های بخش intro */
+        /* دکمه‌های ۳ تایی بخش intro (وسط‌چین و بزرگ‌تر) */
         #intro .actions {
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
+            align-items: center;
             flex-wrap: wrap;
-            gap: 1.2em;
-            margin-top: 1.8em;
+            gap: 1.5em;
+            margin-top: 2em;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        #intro .actions li {
+            padding: 0;
+            margin: 0;
         }
 
         #intro .actions .button {
-            width: 11em !important;
+            width: 12.5em !important;
             padding: 0 !important;
-            height: 3em !important;
-            line-height: 3em !important;
+            height: 3.2em !important;
+            line-height: 3.2em !important;
+            font-size: 0.95em !important;
             text-align: center !important;
             display: inline-block !important;
             background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%) !important;
@@ -188,6 +197,7 @@
             border: 1px solid rgba(255, 255, 255, 0.3) !important;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
+            border-radius: 6px;
         }
 
         #intro .actions .button:hover {
@@ -302,7 +312,7 @@
             }
 
             #intro .actions {
-                justify-content: flex-start;
+                justify-content: center;
             }
 
             .toggle-container iframe {
@@ -348,7 +358,7 @@
                             NPI &amp; NPD | Positive Displacement Machines
                         </p>
                         
-                        <!-- ۴ دکمه هم‌اندازه و در یک راستا -->
+                        <!-- ۳ دکمه بزرگ‌تر و وسط‌چین -->
                         <ul class="actions">
                             <li>
                                 <a href="#one" class="button scrolly">
@@ -365,14 +375,6 @@
                                     Certificates
                                 </a>
                             </li>
-                            <li style="text-align: center;">
-                                <a href="javascript:void(0);" onclick="toggleSection('cv-container');" class="button">
-                                    CV
-                                </a>
-                                <div style="font-size: 0.75em; opacity: 0.6; margin-top: 0.4em; text-align: center;">
-                                  
-                                </div>
-                            </li>
                         </ul>
                     </div>
 
@@ -384,19 +386,16 @@
                     />
                 </div>
 
-                <!-- بخش کشویی نمایش فایل CV.pdf -->
-               
-
                 <!-- بخش کشویی نمایش فایل‌های Hydraulic.pdf و VAVE.pdf -->
                 <div id="certificates-container" class="toggle-container" style="margin-top: 2em;">
                     <iframe src="imag/Hydraulic.pdf" title="Hydraulic Certificate PDF"></iframe>
                     <iframe src="imag/VAVE.pdf" title="VAVE Certificate PDF" style="margin-bottom: 0;"></iframe>
                 </div>
 
-                <!-- عنوان درشت بالای ۴ بولت پروژه -->
+                <!-- عنوان درشت بالای بولت‌های پروژه -->
                 <h3 class="intro-bullets-title">Positive Displacement Machines | Selected Projects</h3>
 
-                <!-- بولت‌پوینت‌ها همراه با پروژه جدید در ردیف دوم -->
+                <!-- بولت‌پوینت‌ها همراه با دکمه‌های Watch و Read برای هر ۴ پروژه -->
                 <ul class="intro-bullets">
                     <li>
                         <strong>Diaphragm Pump Design Platform:</strong> Parametric Design for Laboratory Applications.
@@ -419,7 +418,13 @@
                             <a href="javascript:void(0);" onclick="toggleSection('top-screw-pdf');" class="small-black-btn">Read</a>
                         </span>
                     </li>
-                    <li><strong>Scroll Compressor Development:</strong> Co-Simulation & Performance Optimization for EV Heat Pumps Systems.</li>
+                    <li>
+                        <strong>Scroll Compressor Development:</strong> Co-Simulation & Performance Optimization for EV Heat Pumps Systems.
+                        <span class="inline-btn-group">
+                            <a href="javascript:void(0);" onclick="toggleSection('top-scroll-video');" class="small-black-btn">Watch</a>
+                            <a href="https://github.com/MajidMehrnia/Electromechanical-Fluid-Systems-Engineering" target="_blank" rel="noopener noreferrer" class="small-black-btn">Read</a>
+                        </span>
+                    </li>
                 </ul>
 
                 <!-- بخش‌های کشویی مربوط به دکمه‌های بالای صفحه -->
@@ -460,7 +465,14 @@
                     <iframe src="https://drive.google.com/file/d/1c9gE3tQFtHuEZi5fD1900KYD8xB_Kenf/preview" title="Selected Presentation PDF" style="margin-bottom: 0;"></iframe>
                 </div>
 
-                <!-- بخش جدول Readiness Freeze Matrix (انتقال یافته به پایین بولت‌پوینت‌ها) -->
+                <div id="top-scroll-video" class="toggle-container" style="margin-top: 1.5em;">
+                    <video controls preload="metadata" style="margin-bottom: 0;">
+                        <source src="imag/Scroll.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <!-- بخش جدول Readiness Freeze Matrix -->
                 <div class="rf-matrix-container">
                     <div class="npi-section-title-wrapper">
                         <div class="npi-main-heading">How I Manage NPI?</div>
@@ -477,7 +489,6 @@
 
             <!-- Project 1: Diaphragm Pump -->
             <section id="pump-project">
-
                 <a href="javascript:void(0);" onclick="toggleSection('pump-workflow');" class="image">
                     <img
                         src="imag/diaphragmaction.gif"
@@ -488,14 +499,11 @@
                 <div class="content">
                     <div class="inner">
                         <h2>Diaphragm Pump Design & Simulation Platform</h2>
-
                         <p>
                             A platform for conceptual design, simulation, validation and Optimization of diaphragm pumps
                             for diverse laboratory functional requirements,
                             covering different media and pump functions.
                         </p>
-
-                        <!-- ۲ دکمه در یک راستا -->
                         <ul class="actions">
                             <li>
                                 <a href="javascript:void(0);" onclick="toggleSection('pump-workflow');" class="button">
@@ -510,7 +518,6 @@
                         </ul>
                     </div>
                 </div>
-
             </section>
 
             <!-- بخش کشویی ۱ پروژه ۱ -->
@@ -530,9 +537,8 @@
                 </video>
             </div>
 
-            <!-- Project 2: Peristaltic Blood Pump (پروژه جدید ردیف دوم) -->
+            <!-- Project 2: Peristaltic Blood Pump -->
             <section id="peri-project">
-
                 <a href="javascript:void(0);" onclick="toggleSection('peri-workflow');" class="image">
                     <img
                         src="imag/Peri.jpg"
@@ -543,11 +549,9 @@
                 <div class="content">
                     <div class="inner">
                         <h2>Peristaltic Blood Pump Optimization</h2>
-
                         <p>
                             Design and Performance Optimization for Hemodialysis Applications, focusing on fluid dynamics, occlusion mechanics, and structural integrity.
                         </p>
-
                         <ul class="actions">
                             <li>
                                 <a href="javascript:void(0);" onclick="toggleSection('peri-workflow');" class="button">
@@ -562,15 +566,14 @@
                         </ul>
                     </div>
                 </div>
-
             </section>
 
-            <!-- بخش کشویی PDF پروژه دوم جدید -->
+            <!-- بخش کشویی PDF پروژه دوم -->
             <div id="peri-workflow" class="toggle-container">
                 <iframe src="imag/Peristaltic_Design_Workflow.pdf" title="Peristaltic Design Workflow PDF" style="margin-bottom: 0;"></iframe>
             </div>
 
-            <!-- بخش کشویی ویدیو پروژه دوم جدید -->
+            <!-- بخش کشویی ویدیو پروژه دوم -->
             <div id="peri-video" class="toggle-container">
                 <video controls preload="metadata" style="margin-bottom: 0;">
                     <source src="imag/Peristaltic.mp4" type="video/mp4">
@@ -590,13 +593,11 @@
                 <div class="content">
                     <div class="inner">
                         <h2>High-Viscosity Pump Test Bench</h2>
-
                         <p>
                             Delivered VDMA FKM Project for the Pumps + Systems trade association,
                             conducting technical reviews and engineering assessments of screw and gear
                             pumps.
                         </p>
-
                         <ul class="actions">
                             <li>
                                 <a href="javascript:void(0);" onclick="toggleSection('screw-pdf');" class="button">
@@ -613,12 +614,12 @@
                 </div>
             </section>
 
-            <!-- بخش کشویی PDF پروژه سوم (Selected Presentation) -->
+            <!-- بخش کشویی PDF پروژه سوم -->
             <div id="screw-pdf" class="toggle-container">
                 <iframe src="https://drive.google.com/file/d/1c9gE3tQFtHuEZi5fD1900KYD8xB_Kenf/preview" title="Selected Presentation PDF" style="margin-bottom: 0;"></iframe>
             </div>
 
-            <!-- بخش کشویی ویدیو پروژه سوم (screw.mp4) -->
+            <!-- بخش کشویی ویدیو پروژه سوم -->
             <div id="screw-video" class="toggle-container">
                 <video controls preload="metadata" style="margin-bottom: 0;">
                     <source src="imag/screw.mp4" type="video/mp4">
@@ -626,9 +627,9 @@
                 </video>
             </div>
 
-            <!-- Project 4: EV Compressor -->
-            <section>
-                <a href="https://github.com/MajidMehrnia/Electromechanical-Fluid-Systems-Engineering" target="_blank" rel="noopener noreferrer" class="image">
+            <!-- Project 4: EV Compressor (Scroll Compressor Development) -->
+            <section id="scroll-project">
+                <a href="javascript:void(0);" onclick="toggleSection('scroll-video');" class="image">
                     <img
                         src="imag/ev-compressor.jpg"
                         alt="EV Compressor Design"
@@ -638,18 +639,19 @@
                 <div class="content">
                     <div class="inner">
                         <h2>EV Compressor Development</h2>
-
                         <p>
                             Engineering optimization of compressor technology
-                            for electric-vehicle heat pump system, connecting
-                            fluid systems, electromechanical design and
-                            system-level validation.
+                            for EV heat pump system
                         </p>
-
                         <ul class="actions">
                             <li>
                                 <a href="https://github.com/MajidMehrnia/Electromechanical-Fluid-Systems-Engineering" target="_blank" rel="noopener noreferrer" class="button">
                                     Project Details
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="toggleSection('scroll-video');" class="button">
+                                    Watch Presentation
                                 </a>
                             </li>
                         </ul>
@@ -657,20 +659,25 @@
                 </div>
             </section>
 
+            <!-- بخش کشویی ویدیو پروژه چهارم (Scroll.mp4) -->
+            <div id="scroll-video" class="toggle-container">
+                <video controls preload="metadata" style="margin-bottom: 0;">
+                    <source src="imag/Scroll.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+        </section>
 
         <!-- SKILLS -->
         <section id="two" class="wrapper style3 fade-up">
             <div class="inner">
-
                 <h2>Skills &amp; Expertise</h2>
-
                 <p>
                     Core competencies spanning product development, systems engineering, digital continuity and operational excellence.
                 </p>
 
-                <!-- 4 main skill boxes -->
                 <div class="features">
-
                     <section>
                         <span class="icon solid major fa-project-diagram"></span>
                         <h3>Product Development</h3>
@@ -707,10 +714,8 @@
                             continuous improvement and On-Time Delivery.
                         </p>
                     </section>
-
                 </div>
 
-                <!-- 5 detailed engineering competencies -->
                 <div class="skills-extended-list">
                     <h3>Detailed Engineering Frameworks &amp; Competencies</h3>
                     <ul>
@@ -737,16 +742,13 @@
                         </li>
                     </ul>
                 </div>
-
             </div>
         </section>
 
         <!-- CONTACT -->
         <section id="three" class="wrapper style1 fade-up">
             <div class="inner" style="text-align: center;">
-
                 <h2>Contact</h2>
-
                 <p style="max-width: 40em; margin: 0 auto 2em auto;">
                     For collaboration opportunities,
                     feel free to get in touch.
@@ -786,7 +788,6 @@
                         </li>
                     </ul>
                 </div>
-
             </div>
         </section>
 
