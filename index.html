@@ -242,7 +242,7 @@
             object-position: center;
         }
 
-        /* تنظیم دکمه‌های پروژه‌ها در یک راستا */
+        /* تنظیم دکمه‌های پروژه‌ها در یک راستا (هم‌اندازه کردن و انعطاف‌پذیری) */
         .spotlights .actions {
             display: flex;
             flex-wrap: wrap;
@@ -253,6 +253,16 @@
         .spotlights .actions li {
             padding: 0;
             margin: 0;
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .spotlights .actions li .button {
+            width: 100% !important;
+            text-align: center !important;
+            box-sizing: border-box !important;
+            padding: 0 1em !important;
+            white-space: nowrap;
         }
 
         /* بخش‌های بازشونده (گالری، PDF و ویدیو) */
@@ -395,8 +405,15 @@
                 <!-- عنوان درشت بالای بولت‌های پروژه -->
                 <h3 class="intro-bullets-title">Positive Displacement Machines | Selected Projects</h3>
 
-                <!-- بولت‌پوینت‌ها همراه با دکمه‌های Watch و Read برای هر ۴ پروژه -->
+                <!-- بولت‌پوینت‌ها همراه با دکمه‌های Watch و Read برای هر ۵ پروژه -->
                 <ul class="intro-bullets">
+                    <li>
+                        <strong>Rotary Vane Vacuum Pump Development: Cooling System Design.</strong>
+                        <span class="inline-btn-group">
+                            <a href="javascript:void(0);" onclick="toggleSection('top-vane-video');" class="small-black-btn">Watch</a>
+                            <a href="javascript:void(0);" onclick="toggleSection('top-vane-pdf');" class="small-black-btn">Read</a>
+                        </span>
+                    </li>
                     <li>
                         <strong>Diaphragm Pump Design Platform:</strong> Parametric Design for Laboratory Applications.
                         <span class="inline-btn-group">
@@ -428,6 +445,17 @@
                 </ul>
 
                 <!-- بخش‌های کشویی مربوط به دکمه‌های بالای صفحه -->
+                <div id="top-vane-video" class="toggle-container" style="margin-top: 1.5em;">
+                    <video controls preload="metadata" style="margin-bottom: 0;">
+                        <source src="imag/vane.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div id="top-vane-pdf" class="toggle-container" style="margin-top: 1.5em;">
+                    <iframe src="imag/vane.pdf" title="Vane PDF" style="margin-bottom: 0;"></iframe>
+                </div>
+
                 <div id="top-pump-video" class="toggle-container" style="margin-top: 1.5em;">
                     <video controls preload="metadata">
                         <source src="imag/v1.mp4" type="video/mp4">
@@ -495,7 +523,50 @@
         <!-- PROJECTS -->
         <section id="one" class="wrapper style2 spotlights">
 
-            <!-- Project 1: Diaphragm Pump -->
+            <!-- Project 1: Rotary Vane Vacuum Pump -->
+            <section id="vane-project">
+                <a href="javascript:void(0);" onclick="toggleSection('vane-pdf');" class="image">
+                    <img
+                        src="imag/vane.jpg"
+                        alt="Rotary Vane Vacuum Pump"
+                    />
+                </a>
+
+                <div class="content">
+                    <div class="inner">
+                        <h2>Rotary Vane Vacuum Pump Development: Cooling System Design</h2>
+                        <p>
+                            Design and optimization of advanced cooling systems for rotary vane vacuum pumps to enhance thermal management, reliability, and continuous operational performance.
+                        </p>
+                        <ul class="actions">
+                            <li>
+                                <a href="javascript:void(0);" onclick="toggleSection('vane-pdf');" class="button">
+                                    Read Document
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="toggleSection('vane-video');" class="button">
+                                    Watch Presentation
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- بخش‌های کشویی پروژه Rotary Vane -->
+            <div id="vane-pdf" class="toggle-container">
+                <iframe src="imag/vane.pdf" title="Vane PDF" style="margin-bottom: 0;"></iframe>
+            </div>
+
+            <div id="vane-video" class="toggle-container">
+                <video controls preload="metadata" style="margin-bottom: 0;">
+                    <source src="imag/vane.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Project 2: Diaphragm Pump -->
             <section id="pump-project">
                 <a href="javascript:void(0);" onclick="toggleSection('pump-workflow');" class="image">
                     <img
@@ -528,12 +599,12 @@
                 </div>
             </section>
 
-            <!-- بخش کشویی ۱ پروژه ۱ -->
+            <!-- بخش کشویی ۱ پروژه ۲ -->
             <div id="pump-workflow" class="toggle-container">
                 <iframe src="imag/Design_Workflow.pdf" title="Design Workflow PDF" style="margin-bottom: 0;"></iframe>
             </div>
 
-            <!-- بخش کشویی ۲ پروژه ۱ -->
+            <!-- بخش کشویی ۲ پروژه ۲ -->
             <div id="pump-video" class="toggle-container">
                 <video controls preload="metadata">
                     <source src="imag/v1.mp4" type="video/mp4">
@@ -545,7 +616,7 @@
                 </video>
             </div>
 
-            <!-- Project 2: Peristaltic Blood Pump -->
+            <!-- Project 3: Peristaltic Blood Pump -->
             <section id="peri-project">
                 <a href="javascript:void(0);" onclick="toggleSection('peri-workflow');" class="image">
                     <img
@@ -576,12 +647,12 @@
                 </div>
             </section>
 
-            <!-- بخش کشویی PDF پروژه دوم -->
+            <!-- بخش کشویی PDF پروژه سوم -->
             <div id="peri-workflow" class="toggle-container">
                 <iframe src="imag/Peristaltic_Design_Workflow.pdf" title="Peristaltic Design Workflow PDF" style="margin-bottom: 0;"></iframe>
             </div>
 
-            <!-- بخش کشویی ویدیو پروژه دوم -->
+            <!-- بخش کشویی ویدیو پروژه سوم -->
             <div id="peri-video" class="toggle-container">
                 <video controls preload="metadata" style="margin-bottom: 0;">
                     <source src="imag/Peristaltic.mp4" type="video/mp4">
@@ -589,7 +660,7 @@
                 </video>
             </div>
 
-            <!-- Project 3: Screw Pump Test Bench -->
+            <!-- Project 4: Screw Pump Test Bench -->
             <section>
                 <a href="javascript:void(0);" onclick="toggleSection('screw-pdf');" class="image">
                     <img
@@ -622,12 +693,12 @@
                 </div>
             </section>
 
-            <!-- بخش کشویی PDF پروژه سوم -->
+            <!-- بخش کشویی PDF پروژه چهارم -->
             <div id="screw-pdf" class="toggle-container">
                 <iframe src="https://drive.google.com/file/d/1c9gE3tQFtHuEZi5fD1900KYD8xB_Kenf/preview" title="Selected Presentation PDF" style="margin-bottom: 0;"></iframe>
             </div>
 
-            <!-- بخش کشویی ویدیو پروژه سوم -->
+            <!-- بخش کشویی ویدیو پروژه چهارم -->
             <div id="screw-video" class="toggle-container">
                 <video controls preload="metadata" style="margin-bottom: 0;">
                     <source src="imag/screw.mp4" type="video/mp4">
@@ -635,7 +706,7 @@
                 </video>
             </div>
 
-            <!-- Project 4: EV Compressor (Scroll Compressor Development) -->
+            <!-- Project 5: EV Compressor (Scroll Compressor Development) -->
             <section id="scroll-project">
                 <a href="javascript:void(0);" onclick="toggleSection('scroll-video');" class="image">
                     <img
@@ -667,7 +738,7 @@
                 </div>
             </section>
 
-            <!-- بخش کشویی ویدیو پروژه چهارم (Scroll.mp4) -->
+            <!-- بخش کشویی ویدیو پروژه پنجم (Scroll.mp4) -->
             <div id="scroll-video" class="toggle-container">
                 <video controls preload="metadata" style="margin-bottom: 0;">
                     <source src="imag/Scroll.mp4" type="video/mp4">
