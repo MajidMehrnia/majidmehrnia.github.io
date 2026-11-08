@@ -129,26 +129,36 @@
 
         .intro-bullets {
             margin-top: 0.5em;
+            list-style: none;
+            padding-left: 0;
         }
 
+        /* تنظیم دقیقا یک‌راستا کردن تمام ۵ سطر بولت‌ها و دکمه‌ها */
         .intro-bullets li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1em;
             margin-bottom: 1em;
             line-height: 1.6;
         }
 
-        /* استایل دکمه‌های کوچک مشکی Watch و Read در بولت‌پوینت‌های بالا */
+        .intro-bullets li .bullet-text {
+            flex: 1;
+            min-width: 0;
+        }
+
         .inline-btn-group {
             display: inline-flex;
             gap: 0.4em;
-            margin-left: 0.8em;
-            vertical-align: middle;
+            flex-shrink: 0;
         }
 
         .small-black-btn {
             background: #111111 !important;
             color: #ffffff !important;
             border: 1px solid rgba(255, 255, 255, 0.3) !important;
-            padding: 0.1em 0.6em !important;
+            padding: 0.2em 0.8em !important;
             font-size: 0.75em !important;
             font-weight: 600;
             height: auto !important;
@@ -159,6 +169,8 @@
             text-decoration: none !important;
             display: inline-block;
             cursor: pointer;
+            width: 4.5em;
+            text-align: center;
         }
 
         .small-black-btn:hover {
@@ -242,7 +254,7 @@
             object-position: center;
         }
 
-        /* تنظیم دکمه‌های پروژه‌ها در یک راستا (هم‌اندازه کردن و انعطاف‌پذیری) */
+        /* تنظیم دکمه‌های پروژه‌ها در یک راستا */
         .spotlights .actions {
             display: flex;
             flex-wrap: wrap;
@@ -405,38 +417,48 @@
                 <!-- عنوان درشت بالای بولت‌های پروژه -->
                 <h3 class="intro-bullets-title">Positive Displacement Machines | Selected Projects</h3>
 
-                <!-- بولت‌پوینت‌ها همراه با دکمه‌های Watch و Read برای هر ۵ پروژه -->
+                <!-- بولت‌پوینت‌ها کاملا تراز شده با دکمه‌های Watch و Read در راستای مشخص -->
                 <ul class="intro-bullets">
                     <li>
-                        <strong>Rotary Vane Vacuum Pump Development: Cooling System Design.</strong>
+                        <span class="bullet-text">
+                            <strong>Rotary Vane Vacuum Pump Development:</strong> Cooling System Design for oil-Sealed Two-Stage Pump.
+                        </span>
                         <span class="inline-btn-group">
                             <a href="javascript:void(0);" onclick="toggleSection('top-vane-video');" class="small-black-btn">Watch</a>
                             <a href="javascript:void(0);" onclick="toggleSection('top-vane-pdf');" class="small-black-btn">Read</a>
                         </span>
                     </li>
                     <li>
-                        <strong>Diaphragm Pump Design Platform:</strong> Parametric Design for Laboratory Applications.
+                        <span class="bullet-text">
+                            <strong>Diaphragm Pump Design Platform:</strong> Parametric Design for Laboratory Applications.
+                        </span>
                         <span class="inline-btn-group">
                             <a href="javascript:void(0);" onclick="toggleSection('top-pump-video');" class="small-black-btn">Watch</a>
                             <a href="javascript:void(0);" onclick="toggleSection('top-pump-workflow');" class="small-black-btn">Read</a>
                         </span>
                     </li>
                     <li>
-                        <strong>Peristaltic Blood Pump Optimization:</strong> Design Improvement for Clinical Applications.
+                        <span class="bullet-text">
+                            <strong>Peristaltic Blood Pump Optimization:</strong> Design Improvement for Clinical Applications.
+                        </span>
                         <span class="inline-btn-group">
                             <a href="javascript:void(0);" onclick="toggleSection('top-peri-video');" class="small-black-btn">Watch</a>
                             <a href="javascript:void(0);" onclick="toggleSection('top-peri-workflow');" class="small-black-btn">Read</a>
                         </span>
                     </li>
                     <li>
-                        <strong>High-Viscosity Pump Test Bench:</strong> Design and Development for Screw Pump Testing.
+                        <span class="bullet-text">
+                            <strong>High-Viscosity Pump Test Bench:</strong> Design and Development for Screw Pump Testing.
+                        </span>
                         <span class="inline-btn-group">
                             <a href="javascript:void(0);" onclick="toggleSection('top-screw-video');" class="small-black-btn">Watch</a>
                             <a href="javascript:void(0);" onclick="toggleSection('top-screw-pdf');" class="small-black-btn">Read</a>
                         </span>
                     </li>
                     <li>
-                        <strong>Scroll Compressor Development:</strong> Co-Simulation & Optimization for EV Heat Pumps.
+                        <span class="bullet-text">
+                            <strong>Scroll Compressor Development:</strong> Co-Simulation &amp; Optimization for EV Heat Pumps.
+                        </span>
                         <span class="inline-btn-group">
                             <a href="javascript:void(0);" onclick="toggleSection('top-scroll-video');" class="small-black-btn">Watch</a>
                             <a href="https://github.com/MajidMehrnia/Electromechanical-Fluid-Systems-Engineering" target="_blank" rel="noopener noreferrer" class="small-black-btn">Read</a>
@@ -577,7 +599,7 @@
 
                 <div class="content">
                     <div class="inner">
-                        <h2>Diaphragm Pump Design & Simulation Platform</h2>
+                        <h2>Diaphragm Pump Design &amp; Simulation Platform</h2>
                         <p>
                             A platform for conceptual design, simulation, validation and Optimization of diaphragm pumps
                             for diverse laboratory functional requirements,
