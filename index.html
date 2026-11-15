@@ -69,15 +69,15 @@
             margin-bottom: 1.5em;
         }
 
-        /* استایل کانتینر سمت راست (اول بج، بعد عکس پروفایل) */
+        /* کانتینر سمت راست: شامل بج در سمت چپ و عکس پروفایل در سمت راست */
         .intro-media-wrapper {
             display: flex;
             align-items: center;
-            gap: 1.5em;
+            gap: 2em;
             flex-shrink: 0;
         }
 
-        /* استایل بخش بج و لینک Verify (سمت چپ عکس پروفایل) */
+        /* استایل بخش بج (دقیقاً هماهنگ با سایز عکس پروفایل و حذف حاشیه سفید) */
         .badge-container {
             display: flex;
             flex-direction: column;
@@ -86,18 +86,21 @@
         }
 
         .badge-container img {
-            width: 7.5em;
-            height: 7.5em;
+            width: 14em;
+            height: 14em;
             object-fit: contain;
             background: transparent;
-            border: none;
-            box-shadow: none;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
             margin-bottom: 0.6em;
             transition: transform 0.2s ease;
+            /* این خط رنگ سفید دور عکس را در پس‌زمینه سایت محو و هماهنگ می‌کند */
+            mix-blend-mode: multiply; 
         }
 
         .badge-container img:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
 
         .badge-verify-link {
@@ -112,6 +115,7 @@
             padding: 0.3em 0.8em;
             border-radius: 4px;
             transition: all 0.2s ease;
+            white-space: nowrap;
         }
 
         .badge-verify-link:hover {
@@ -383,14 +387,10 @@
                 justify-content: flex-start;
             }
 
-            .intro-profile .profile-photo {
+            .intro-profile .profile-photo,
+            .badge-container img {
                 width: 11em;
                 height: 11em;
-            }
-
-            .badge-container img {
-                width: 6.5em;
-                height: 6.5em;
             }
 
             #intro .actions {
@@ -460,7 +460,7 @@
                         </ul>
                     </div>
 
-                    <!-- بخش بج و عکس پروفایل در کنار هم (اول بج، بعد عکس) -->
+                    <!-- بخش بج در سمت چپ و عکس پروفایل در سمت راست (هم‌سایز) -->
                     <div class="intro-media-wrapper">
                         <!-- Credly Badge & Verify Link -->
                         <div class="badge-container">
