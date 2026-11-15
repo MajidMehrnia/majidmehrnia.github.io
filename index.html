@@ -69,16 +69,66 @@
             margin-bottom: 1.5em;
         }
 
+        /* استایل کانتینر سمت راست (عکس پروفایل + بج) */
+        .intro-media-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1.5em;
+            flex-shrink: 0;
+        }
+
         .intro-profile .profile-photo {
-            width: 15em;
-            height: 15em;
-            flex: 0 0 15em;
+            width: 14em;
+            height: 14em;
             object-fit: contain;
             object-position: center;
             border-radius: 8px;
             background: rgba(255, 255, 255, 0.06);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
             border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* استایل بخش بج و لینک Verify کنار عکس (بدون کادر اضافه و حاشیه سفید) */
+        .badge-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .badge-container img {
+            width: 7.5em;
+            height: 7.5em;
+            object-fit: contain;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            margin-bottom: 0.6em;
+            transition: transform 0.2s ease;
+        }
+
+        .badge-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .badge-verify-link {
+            font-size: 0.85em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #93c5fd !important;
+            text-decoration: none;
+            background: rgba(147, 197, 253, 0.1);
+            border: 1px solid rgba(147, 197, 253, 0.3);
+            padding: 0.3em 0.8em;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .badge-verify-link:hover {
+            background: rgba(147, 197, 253, 0.25);
+            color: #ffffff !important;
+            border-color: rgba(147, 197, 253, 0.6);
         }
 
         /* استایل شیک و مرکزگرا برای تصاویر و عناوین بالا */
@@ -327,10 +377,19 @@
                 gap: 1.5em;
             }
 
+            .intro-media-wrapper {
+                width: 100%;
+                justify-content: flex-start;
+            }
+
             .intro-profile .profile-photo {
-                width: 12em;
-                height: 12em;
-                flex-basis: 12em;
+                width: 11em;
+                height: 11em;
+            }
+
+            .badge-container img {
+                width: 6.5em;
+                height: 6.5em;
             }
 
             #intro .actions {
@@ -377,7 +436,7 @@
                         </p>
 
                         <p class="intro-subtitle-sub">
-                            NPI &amp; NPD | Pumps & Compressors
+                            NPI &amp; NPD | Pumps &amp; Compressors
                         </p>
                         
                         <!-- ۳ دکمه بزرگ‌تر و وسط‌چین -->
@@ -400,12 +459,25 @@
                         </ul>
                     </div>
 
-                    <!-- Profile photo -->
-                    <img
-                        src="imag/profile.jpg"
-                        alt="Majid Mehrnia"
-                        class="profile-photo"
-                    />
+                    <!-- بخش عکس پروفایل و بج در کنار هم -->
+                    <div class="intro-media-wrapper">
+                        <!-- Profile photo -->
+                        <img
+                            src="imag/profile.jpg"
+                            alt="Majid Mehrnia"
+                            class="profile-photo"
+                        />
+
+                        <!-- Credly Badge & Verify Link -->
+                        <div class="badge-container">
+                            <a href="https://www.credly.com/org/american-vacuum-society/badge/vacuum-system-design" target="_blank" rel="noopener noreferrer">
+                                <img src="imag/badge.jpg" alt="Vacuum System Design Badge" />
+                            </a>
+                            <a href="https://www.credly.com/org/american-vacuum-society/badge/vacuum-system-design" target="_blank" rel="noopener noreferrer" class="badge-verify-link">
+                                Verify
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- بخش کشویی نمایش فایل‌های Hydraulic.pdf و VAVE.pdf -->
