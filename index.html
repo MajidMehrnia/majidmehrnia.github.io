@@ -69,7 +69,7 @@
             margin-bottom: 1.5em;
         }
 
-        /* استایل کانتینر سمت راست (عکس پروفایل + بج) */
+        /* استایل کانتینر سمت راست (اول بج، بعد عکس پروفایل) */
         .intro-media-wrapper {
             display: flex;
             align-items: center;
@@ -77,18 +77,7 @@
             flex-shrink: 0;
         }
 
-        .intro-profile .profile-photo {
-            width: 14em;
-            height: 14em;
-            object-fit: contain;
-            object-position: center;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.06);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* استایل بخش بج و لینک Verify کنار عکس (بدون کادر اضافه و حاشیه سفید) */
+        /* استایل بخش بج و لینک Verify (سمت چپ عکس پروفایل) */
         .badge-container {
             display: flex;
             flex-direction: column;
@@ -129,6 +118,18 @@
             background: rgba(147, 197, 253, 0.25);
             color: #ffffff !important;
             border-color: rgba(147, 197, 253, 0.6);
+        }
+
+        /* عکس پروفایل */
+        .intro-profile .profile-photo {
+            width: 14em;
+            height: 14em;
+            object-fit: contain;
+            object-position: center;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
         /* استایل شیک و مرکزگرا برای تصاویر و عناوین بالا */
@@ -459,15 +460,8 @@
                         </ul>
                     </div>
 
-                    <!-- بخش عکس پروفایل و بج در کنار هم -->
+                    <!-- بخش بج و عکس پروفایل در کنار هم (اول بج، بعد عکس) -->
                     <div class="intro-media-wrapper">
-                        <!-- Profile photo -->
-                        <img
-                            src="imag/profile.jpg"
-                            alt="Majid Mehrnia"
-                            class="profile-photo"
-                        />
-
                         <!-- Credly Badge & Verify Link -->
                         <div class="badge-container">
                             <a href="https://www.credly.com/org/american-vacuum-society/badge/vacuum-system-design" target="_blank" rel="noopener noreferrer">
@@ -477,6 +471,13 @@
                                 Verify
                             </a>
                         </div>
+
+                        <!-- Profile photo -->
+                        <img
+                            src="imag/profile.jpg"
+                            alt="Majid Mehrnia"
+                            class="profile-photo"
+                        />
                     </div>
                 </div>
 
