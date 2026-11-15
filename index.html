@@ -77,15 +77,18 @@
             flex-shrink: 0;
         }
 
-        /* استایل بخش بج (دقیقاً هماهنگ با سایز عکس پروفایل و حذف حاشیه سفید) */
-        .badge-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+        /* استایل بج (هم‌سایز با عکس، بدون حاشیه سفید مزاحم و دارای لینک مستقیم) */
+        .badge-link-wrapper {
+            display: inline-block;
+            line-height: 0;
+            transition: transform 0.2s ease;
         }
 
-        .badge-container img {
+        .badge-link-wrapper:hover {
+            transform: scale(1.03);
+        }
+
+        .badge-link-wrapper img {
             width: 14em;
             height: 14em;
             object-fit: contain;
@@ -93,35 +96,7 @@
             border: 2px solid rgba(255, 255, 255, 0.2);
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-            margin-bottom: 0.6em;
-            transition: transform 0.2s ease;
-            /* این خط رنگ سفید دور عکس را در پس‌زمینه سایت محو و هماهنگ می‌کند */
-            mix-blend-mode: multiply; 
-        }
-
-        .badge-container img:hover {
-            transform: scale(1.03);
-        }
-
-        .badge-verify-link {
-            font-size: 0.85em;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #93c5fd !important;
-            text-decoration: none;
-            background: rgba(147, 197, 253, 0.1);
-            border: 1px solid rgba(147, 197, 253, 0.3);
-            padding: 0.3em 0.8em;
-            border-radius: 4px;
-            transition: all 0.2s ease;
-            white-space: nowrap;
-        }
-
-        .badge-verify-link:hover {
-            background: rgba(147, 197, 253, 0.25);
-            color: #ffffff !important;
-            border-color: rgba(147, 197, 253, 0.6);
+            mix-blend-mode: multiply;
         }
 
         /* عکس پروفایل */
@@ -388,7 +363,7 @@
             }
 
             .intro-profile .profile-photo,
-            .badge-container img {
+            .badge-link-wrapper img {
                 width: 11em;
                 height: 11em;
             }
@@ -460,17 +435,12 @@
                         </ul>
                     </div>
 
-                    <!-- بخش بج در سمت چپ و عکس پروفایل در سمت راست (هم‌سایز) -->
+                    <!-- بخش بج در سمت چپ و عکس پروفایل در سمت راست (هم‌راستا و هم‌سایز) -->
                     <div class="intro-media-wrapper">
-                        <!-- Credly Badge & Verify Link -->
-                        <div class="badge-container">
-                            <a href="https://www.credly.com/org/american-vacuum-society/badge/vacuum-system-design" target="_blank" rel="noopener noreferrer">
-                                <img src="imag/badge.jpg" alt="Vacuum System Design Badge" />
-                            </a>
-                            <a href="https://www.credly.com/org/american-vacuum-society/badge/vacuum-system-design" target="_blank" rel="noopener noreferrer" class="badge-verify-link">
-                                Verify
-                            </a>
-                        </div>
+                        <!-- Credly Badge (Clickable) -->
+                        <a href="https://www.credly.com/org/american-vacuum-society/badge/vacuum-system-design" target="_blank" rel="noopener noreferrer" class="badge-link-wrapper">
+                            <img src="imag/badge.jpg" alt="Vacuum System Design Badge" />
+                        </a>
 
                         <!-- Profile photo -->
                         <img
