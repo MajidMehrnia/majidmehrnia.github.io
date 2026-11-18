@@ -133,7 +133,7 @@
             padding-left: 0;
         }
 
-        /* تنظیم دقیقا یک‌راستا کردن تمام ۵ سطر بولت‌ها و دکمه‌ها */
+        /* تنظیم دقیقا یک‌راستا کردن تمام سطر بولت‌ها و دکمه‌ها */
         .intro-bullets li {
             display: flex;
             align-items: center;
@@ -377,7 +377,7 @@
                         </p>
 
                         <p class="intro-subtitle-sub">
-                            NPI &amp; NPD | Pumps & Compressors
+                            NPI &amp; NPD | Pumps &amp; Compressors
                         </p>
                         
                         <!-- ۳ دکمه بزرگ‌تر و وسط‌چین -->
@@ -421,11 +421,20 @@
                 <ul class="intro-bullets">
                     <li>
                         <span class="bullet-text">
-                            <strong>Rotary Vane Vacuum Pump Development:</strong> Cooling System Design.
+                            <strong>Rotary Vane Vacuum Pump Development:</strong> Cooling system for an oil-sealed two-stage system.
                         </span>
                         <span class="inline-btn-group">
                             <a href="javascript:void(0);" onclick="toggleSection('top-vane-video');" class="small-black-btn">Watch</a>
                             <a href="javascript:void(0);" onclick="toggleSection('top-vane-pdf');" class="small-black-btn">Read</a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="bullet-text">
+                            <strong>Liquid Ring Vacuum Pump:</strong> Optimized the lifecycle performance.
+                        </span>
+                        <span class="inline-btn-group">
+                            <a href="javascript:void(0);" onclick="toggleSection('top-liquid-video');" class="small-black-btn">Watch</a>
+                            <a href="javascript:void(0);" onclick="toggleSection('top-liquid-pdf');" class="small-black-btn">Read</a>
                         </span>
                     </li>
                     <li>
@@ -467,6 +476,17 @@
 
                 <div id="top-vane-pdf" class="toggle-container" style="margin-top: 1.5em;">
                     <iframe src="imag/Rotary_Vane_Vacuum_Pump_Technical_Development_Report.pdf" title="Vane PDF" style="margin-bottom: 0;"></iframe>
+                </div>
+
+                <div id="top-liquid-video" class="toggle-container" style="margin-top: 1.5em;">
+                    <video controls preload="metadata" style="margin-bottom: 0;">
+                        <source src="imag/liquid.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div id="top-liquid-pdf" class="toggle-container" style="margin-top: 1.5em;">
+                    <iframe src="imag/LRVP_Mehrnia_Report04.pdf" title="Liquid Ring Vacuum Pump PDF" style="margin-bottom: 0;"></iframe>
                 </div>
 
                 <div id="top-pump-video" class="toggle-container" style="margin-top: 1.5em;">
@@ -558,7 +578,7 @@
 
             <!-- بخش‌های کشویی پروژه Rotary Vane -->
             <div id="vane-pdf" class="toggle-container">
-                <iframe src="imag/vane.pdf" title="Vane PDF" style="margin-bottom: 0;"></iframe>
+                <iframe src="imag/Rotary_Vane_Vacuum_Pump_Technical_Development_Report.pdf" title="Vane PDF" style="margin-bottom: 0;"></iframe>
             </div>
 
             <div id="vane-video" class="toggle-container">
@@ -568,7 +588,50 @@
                 </video>
             </div>
 
-            <!-- Project 2: Diaphragm Pump -->
+            <!-- Project 2: Liquid Ring Vacuum Pump -->
+            <section id="liquid-project">
+                <a href="javascript:void(0);" onclick="toggleSection('liquid-pdf');" class="image">
+                    <img
+                        src="imag/liquid.jpg"
+                        alt="Liquid Ring Vacuum Pump"
+                    />
+                </a>
+
+                <div class="content">
+                    <div class="inner">
+                        <h2>Liquid Ring Vacuum Pump</h2>
+                        <p>
+                            Optimized the lifecycle performance.
+                        </p>
+                        <ul class="actions">
+                            <li>
+                                <a href="javascript:void(0);" onclick="toggleSection('liquid-pdf');" class="button">
+                                    Read Document
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="toggleSection('liquid-video');" class="button">
+                                    Watch Presentation
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- بخش‌های کشویی پروژه Liquid Ring Vacuum Pump -->
+            <div id="liquid-pdf" class="toggle-container">
+                <iframe src="imag/LRVP_Mehrnia_Report04.pdf" title="Liquid Ring Vacuum Pump PDF" style="margin-bottom: 0;"></iframe>
+            </div>
+
+            <div id="liquid-video" class="toggle-container">
+                <video controls preload="metadata" style="margin-bottom: 0;">
+                    <source src="imag/liquid.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Project 3: Diaphragm Pump -->
             <section id="pump-project">
                 <a href="javascript:void(0);" onclick="toggleSection('pump-workflow');" class="image">
                     <img
@@ -601,12 +664,12 @@
                 </div>
             </section>
 
-            <!-- بخش کشویی ۱ پروژه ۲ -->
+            <!-- بخش کشویی ۱ پروژه ۳ -->
             <div id="pump-workflow" class="toggle-container">
                 <iframe src="imag/Design_Workflow.pdf" title="Design Workflow PDF" style="margin-bottom: 0;"></iframe>
             </div>
 
-            <!-- بخش کشویی ۲ پروژه ۲ -->
+            <!-- بخش کشویی ۲ پروژه ۳ -->
             <div id="pump-video" class="toggle-container">
                 <video controls preload="metadata">
                     <source src="imag/v1.mp4" type="video/mp4">
@@ -618,7 +681,7 @@
                 </video>
             </div>
 
-            <!-- Project 3: Peristaltic Blood Pump -->
+            <!-- Project 4: Peristaltic Blood Pump -->
             <section id="peri-project">
                 <a href="javascript:void(0);" onclick="toggleSection('peri-workflow');" class="image">
                     <img
@@ -649,19 +712,18 @@
                 </div>
             </section>
 
-            <!-- بخش کشویی PDF پروژه سوم -->
+            <!-- بخش کشویی PDF پروژه چهارم -->
             <div id="peri-workflow" class="toggle-container">
                 <iframe src="imag/Peristaltic_Design_Workflow.pdf" title="Peristaltic Design Workflow PDF" style="margin-bottom: 0;"></iframe>
             </div>
 
-            <!-- بخش کشویی ویدیو پروژه سوم -->
+            <!-- بخش کشویی ویدیو پروژه چهارم -->
             <div id="peri-video" class="toggle-container">
                 <video controls preload="metadata" style="margin-bottom: 0;">
                     <source src="imag/Peristaltic.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
-
 
             <!-- Project 5: EV Compressor (Scroll Compressor Development) -->
             <section id="scroll-project">
