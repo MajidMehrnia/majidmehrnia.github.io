@@ -69,40 +69,10 @@
             margin-bottom: 1.5em;
         }
 
-        /* کانتینر سمت راست: شامل بج در سمت چپ و عکس پروفایل در سمت راست */
-        .intro-media-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 2em;
-            flex-shrink: 0;
-        }
-
-        /* استایل بج (هم‌سایز با عکس، بدون حاشیه سفید مزاحم و دارای لینک مستقیم) */
-        .badge-link-wrapper {
-            display: inline-block;
-            line-height: 0;
-            transition: transform 0.2s ease;
-        }
-
-        .badge-link-wrapper:hover {
-            transform: scale(1.03);
-        }
-
-        .badge-link-wrapper img {
-            width: 14em;
-            height: 14em;
-            object-fit: contain;
-            background: transparent;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-            mix-blend-mode: multiply;
-        }
-
-        /* عکس پروفایل */
         .intro-profile .profile-photo {
-            width: 14em;
-            height: 14em;
+            width: 15em;
+            height: 15em;
+            flex: 0 0 15em;
             object-fit: contain;
             object-position: center;
             border-radius: 8px;
@@ -163,7 +133,7 @@
             padding-left: 0;
         }
 
-        /* تنظیم دقیقا یک‌راستا کردن تمام ۵ سطر بولت‌ها و دکمه‌ها */
+        /* تنظیم دقیقا یک‌راستا کردن سطر بولت‌ها و دکمه‌ها */
         .intro-bullets li {
             display: flex;
             align-items: center;
@@ -357,15 +327,10 @@
                 gap: 1.5em;
             }
 
-            .intro-media-wrapper {
-                width: 100%;
-                justify-content: flex-start;
-            }
-
-            .intro-profile .profile-photo,
-            .badge-link-wrapper img {
-                width: 11em;
-                height: 11em;
+            .intro-profile .profile-photo {
+                width: 12em;
+                height: 12em;
+                flex-basis: 12em;
             }
 
             #intro .actions {
@@ -435,20 +400,12 @@
                         </ul>
                     </div>
 
-                    <!-- بخش بج در سمت چپ و عکس پروفایل در سمت راست (هم‌راستا و هم‌سایز) -->
-                    <div class="intro-media-wrapper">
-                        <!-- Credly Badge (Clickable) -->
-                        <a href="https://www.credly.com/org/american-vacuum-society/badge/vacuum-system-design" target="_blank" rel="noopener noreferrer" class="badge-link-wrapper">
-                            <img src="imag/badge.jpg" alt="Vacuum System Design Badge" />
-                        </a>
-
-                        <!-- Profile photo -->
-                        <img
-                            src="imag/profile.jpg"
-                            alt="Majid Mehrnia"
-                            class="profile-photo"
-                        />
-                    </div>
+                    <!-- Profile photo -->
+                    <img
+                        src="imag/profile.jpg"
+                        alt="Majid Mehrnia"
+                        class="profile-photo"
+                    />
                 </div>
 
                 <!-- بخش کشویی نمایش فایل‌های Hydraulic.pdf و VAVE.pdf -->
@@ -487,15 +444,6 @@
                         <span class="inline-btn-group">
                             <a href="javascript:void(0);" onclick="toggleSection('top-peri-video');" class="small-black-btn">Watch</a>
                             <a href="javascript:void(0);" onclick="toggleSection('top-peri-workflow');" class="small-black-btn">Read</a>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="bullet-text">
-                            <strong>High-Viscosity Pump Test Bench:</strong> Design and Development for Screw Pump Testing.
-                        </span>
-                        <span class="inline-btn-group">
-                            <a href="javascript:void(0);" onclick="toggleSection('top-screw-video');" class="small-black-btn">Watch</a>
-                            <a href="javascript:void(0);" onclick="toggleSection('top-screw-pdf');" class="small-black-btn">Read</a>
                         </span>
                     </li>
                     <li>
@@ -545,17 +493,6 @@
 
                 <div id="top-peri-workflow" class="toggle-container" style="margin-top: 1.5em;">
                     <iframe src="imag/Peristaltic_Design_Workflow.pdf" title="Peristaltic Design Workflow PDF" style="margin-bottom: 0;"></iframe>
-                </div>
-
-                <div id="top-screw-video" class="toggle-container" style="margin-top: 1.5em;">
-                    <video controls preload="metadata" style="margin-bottom: 0;">
-                        <source src="imag/screw.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-
-                <div id="top-screw-pdf" class="toggle-container" style="margin-top: 1.5em;">
-                    <iframe src="https://drive.google.com/file/d/1c9gE3tQFtHuEZi5fD1900KYD8xB_Kenf/preview" title="Selected Presentation PDF" style="margin-bottom: 0;"></iframe>
                 </div>
 
                 <div id="top-scroll-video" class="toggle-container" style="margin-top: 1.5em;">
@@ -725,53 +662,7 @@
                 </video>
             </div>
 
-            <!-- Project 4: Screw Pump Test Bench -->
-            <section>
-                <a href="javascript:void(0);" onclick="toggleSection('screw-pdf');" class="image">
-                    <img
-                        src="imag/screw.jpg"
-                        alt="Screw Pump Test Bench"
-                    />
-                </a>
-
-                <div class="content">
-                    <div class="inner">
-                        <h2>High-Viscosity Pump Test Bench</h2>
-                        <p>
-                            Delivered VDMA FKM Project for the Pumps + Systems trade association,
-                            conducting technical reviews and engineering assessments of screw and gear
-                            pumps.
-                        </p>
-                        <ul class="actions">
-                            <li>
-                                <a href="javascript:void(0);" onclick="toggleSection('screw-pdf');" class="button">
-                                    Selected Presentation
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" onclick="toggleSection('screw-video');" class="button">
-                                    Watch Presentation
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- بخش کشویی PDF پروژه چهارم -->
-            <div id="screw-pdf" class="toggle-container">
-                <iframe src="https://drive.google.com/file/d/1c9gE3tQFtHuEZi5fD1900KYD8xB_Kenf/preview" title="Selected Presentation PDF" style="margin-bottom: 0;"></iframe>
-            </div>
-
-            <!-- بخش کشویی ویدیو پروژه چهارم -->
-            <div id="screw-video" class="toggle-container">
-                <video controls preload="metadata" style="margin-bottom: 0;">
-                    <source src="imag/screw.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <!-- Project 5: EV Compressor (Scroll Compressor Development) -->
+            <!-- Project 4: EV Compressor (Scroll Compressor Development) -->
             <section id="scroll-project">
                 <a href="javascript:void(0);" onclick="toggleSection('scroll-video');" class="image">
                     <img
@@ -803,7 +694,7 @@
                 </div>
             </section>
 
-            <!-- بخش کشویی ویدیو پروژه پنجم (Scroll.mp4) -->
+            <!-- بخش کشویی ویدیو پروژه EV Compressor (Scroll.mp4) -->
             <div id="scroll-video" class="toggle-container">
                 <video controls preload="metadata" style="margin-bottom: 0;">
                     <source src="imag/Scroll.mp4" type="video/mp4">
@@ -830,149 +721,3 @@
                             design reviews, requirements management and
                             product lifecycle.
                         </p>
-                    </section>
-
-                    <section>
-                        <span class="icon solid major fa-cogs"></span>
-                        <h3>Systems Engineering</h3>
-                        <p>
-                            MBSE, Electromechanical systems, pumps, compressors, 
-                        </p>
-                    </section>
-
-                    <section>
-                        <span class="icon solid major fa-laptop-code"></span>
-                        <h3>Digital Engineering</h3>
-                        <p>
-                            Digital Thread, Digital Twin,
-                            ECAD/MCAD integration and engineering
-                            data continuity.
-                        </p>
-                    </section>
-
-                    <section>
-                        <span class="icon solid major fa-check-circle"></span>
-                        <h3>Operational Excellence</h3>
-                        <p>
-                            Design-to-Cost, VAVE, Quality, Cost, Reliability,
-                            continuous improvement and On-Time Delivery.
-                        </p>
-                    </section>
-                </div>
-
-                <div class="skills-extended-list">
-                    <h3>Detailed Engineering Frameworks &amp; Competencies</h3>
-                    <ul>
-                        <li>
-                            <strong>NPI/NPD |</strong> Hybrid Agile + Stage-Gate | V-Model | DfX / DFSS |
-                            <a
-                                class="certificate-link"
-                                href="imag/vave-certificate.jpg"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >VAVE for Leaders</a>
-                        </li>
-                        <li>
-                            <strong>Engineering &amp; Product Strategy |</strong> Technology Roadmapping | Portfolio Management
-                        </li>
-                        <li>
-                            <strong>Electromechanical &amp; Complex Fluid Systems |</strong> Pumps, Compressors 
-                        </li>
-                        <li>
-                            <strong>Systems Engineering |</strong> MBSE | Digital Thread | Digital Twin | ECAD/MCAD
-                        </li>
-                        <li>
-                            <strong>Operational Excellence |</strong> Quality | Cost | Reliability | On-Time Delivery
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="three" class="wrapper style1 fade-up">
-            <div class="inner" style="text-align: center;">
-                <h2>Contact</h2>
-                <p style="max-width: 40em; margin: 0 auto 2em auto;">
-                    For collaboration opportunities,
-                    feel free to get in touch.
-                </p>
-
-                <div style="display: inline-block; text-align: left;">
-                    <ul class="contact">
-                        <li>
-                            <h3>Location</h3>
-                            <span>Hessen, Germany</span>
-                        </li>
-                        <li>
-                            <h3>Email</h3>
-                            <a href="mailto:Mehrnia@outlook.de">
-                                Mehrnia@outlook.de
-                            </a>
-                        </li>
-                        <li>
-                            <h3>LinkedIn</h3>
-                            <a
-                                href="https://www.linkedin.com/in/majid-mehrnia-6737851a8"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                LinkedIn Profile
-                            </a>
-                        </li>
-                        <li>
-                            <h3>GitHub</h3>
-                            <a
-                                href="https://github.com/MajidMehrnia"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                github.com/MajidMehrnia
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-    <!-- Footer -->
-    <footer id="footer" class="wrapper style1-alt">
-        <div class="inner">
-            <ul class="menu">
-                <li>&copy; Majid Mehrnia. All rights reserved.</li>
-            </ul>
-        </div>
-    </footer>
-
-    <!-- Original Hyperspace JavaScript -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-
-    <!-- Script to toggle sections (PDF & Video) -->
-    <script>
-        function toggleSection(sectionId) {
-            var target = document.getElementById(sectionId);
-            if (!target) return;
-
-            var isVisible = $(target).is(':visible');
-
-            if (isVisible) {
-                var videos = target.querySelectorAll('video');
-                videos.forEach(function(v) { v.pause(); });
-                $(target).slideUp(300);
-            } else {
-                $('.toggle-container').not('#' + sectionId).slideUp(200);
-                $(target).hide().slideDown(300);
-            }
-        }
-    </script>
-
-</body>
-</html>
