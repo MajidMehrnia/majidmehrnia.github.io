@@ -415,7 +415,7 @@
                     />
                 </div>
 
-                <!-- بخش کشویی نمایش فایل‌های Hydraulic.pdf و VAVE.pdf بدون نوار ابزار دانلود/پرینت -->
+                <!-- بخش کشویی نمایش فایل‌های Hydraulic.pdf و VAVE.pdf -->
                 <div id="certificates-container" class="toggle-container" style="margin-top: 2em;">
                     <iframe src="imag/Hydraulic.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Hydraulic Certificate PDF"></iframe>
                     <iframe src="imag/VAVE.pdf#toolbar=0&navpanes=0&scrollbar=0" title="VAVE Certificate PDF" style="margin-bottom: 0;"></iframe>
@@ -934,15 +934,19 @@
             }
         }
 
+        window.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        }, true);
+
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
-        });
+        }, true);
 
-        document.addEventListener('keydown', function(e) {
+        window.addEventListener('keydown', function(e) {
             if ((e.ctrlKey || e.metaKey) && (e.key.toLowerCase() === 'p' || e.key.toLowerCase() === 's')) {
                 e.preventDefault();
             }
-        });
+        }, true);
     </script>
 
 </body>
