@@ -133,7 +133,7 @@
             padding-left: 0;
         }
 
-        /* تنظیم دقیقا یک‌راستا کردن تمام سطر بولت‌ها و دکمه‌ها */
+        /* تنظیم دقیقا یک‌راستا کردن تمام ۵ سطر بولت‌ها و دکمه‌ها */
         .intro-bullets li {
             display: flex;
             align-items: center;
@@ -320,6 +320,13 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
 
+        /* جلوگیری از پرینت شدن صفحه */
+        @media print {
+            body {
+                display: none !important;
+            }
+        }
+
         @media screen and (max-width: 980px) {
             .intro-profile {
                 flex-direction: column-reverse;
@@ -379,7 +386,7 @@
                         <p class="intro-subtitle-sub">
                             NPI &amp; NPD | Pumps &amp; Compressors | Vacuum Technology
                         </p>
-                        
+
                         <!-- ۳ دکمه بزرگ‌تر و وسط‌چین -->
                         <ul class="actions">
                             <li>
@@ -408,10 +415,10 @@
                     />
                 </div>
 
-                <!-- بخش کشویی نمایش فایل‌های Hydraulic.pdf و VAVE.pdf -->
+                <!-- بخش کشویی نمایش فایل‌های Hydraulic.pdf و VAVE.pdf بدون نوار ابزار دانلود/پرینت -->
                 <div id="certificates-container" class="toggle-container" style="margin-top: 2em;">
-                    <iframe src="imag/Hydraulic.pdf" title="Hydraulic Certificate PDF"></iframe>
-                    <iframe src="imag/VAVE.pdf" title="VAVE Certificate PDF" style="margin-bottom: 0;"></iframe>
+                    <iframe src="imag/Hydraulic.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Hydraulic Certificate PDF"></iframe>
+                    <iframe src="imag/VAVE.pdf#toolbar=0&navpanes=0&scrollbar=0" title="VAVE Certificate PDF" style="margin-bottom: 0;"></iframe>
                 </div>
 
                 <!-- عنوان درشت بالای بولت‌های پروژه -->
@@ -475,7 +482,7 @@
                 </div>
 
                 <div id="top-vane-pdf" class="toggle-container" style="margin-top: 1.5em;">
-                    <iframe src="imag/Rotary_Vane_Vacuum_Pump_Technical_Development_Report.pdf" title="Vane PDF" style="margin-bottom: 0;"></iframe>
+                    <iframe src="imag/Rotary_Vane_Vacuum_Pump_Technical_Development_Report.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Vane PDF" style="margin-bottom: 0;"></iframe>
                 </div>
 
                 <div id="top-liquid-video" class="toggle-container" style="margin-top: 1.5em;">
@@ -486,7 +493,7 @@
                 </div>
 
                 <div id="top-liquid-pdf" class="toggle-container" style="margin-top: 1.5em;">
-                    <iframe src="imag/LRVP_Mehrnia_Report04.pdf" title="Liquid Ring Vacuum Pump PDF" style="margin-bottom: 0;"></iframe>
+                    <iframe src="imag/LRVP_Mehrnia_Report04.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Liquid Ring Vacuum Pump PDF" style="margin-bottom: 0;"></iframe>
                 </div>
 
                 <div id="top-pump-video" class="toggle-container" style="margin-top: 1.5em;">
@@ -501,7 +508,7 @@
                 </div>
 
                 <div id="top-pump-workflow" class="toggle-container" style="margin-top: 1.5em;">
-                    <iframe src="imag/Design_Workflow.pdf" title="Design Workflow PDF" style="margin-bottom: 0;"></iframe>
+                    <iframe src="imag/Design_Workflow.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Design Workflow PDF" style="margin-bottom: 0;"></iframe>
                 </div>
 
                 <div id="top-peri-video" class="toggle-container" style="margin-top: 1.5em;">
@@ -512,7 +519,7 @@
                 </div>
 
                 <div id="top-peri-workflow" class="toggle-container" style="margin-top: 1.5em;">
-                    <iframe src="imag/Peristaltic_Design_Workflow.pdf" title="Peristaltic Design Workflow PDF" style="margin-bottom: 0;"></iframe>
+                    <iframe src="imag/Peristaltic_Design_Workflow.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Peristaltic Design Workflow PDF" style="margin-bottom: 0;"></iframe>
                 </div>
 
                 <div id="top-scroll-video" class="toggle-container" style="margin-top: 1.5em;">
@@ -578,7 +585,7 @@
 
             <!-- بخش‌های کشویی پروژه Rotary Vane -->
             <div id="vane-pdf" class="toggle-container">
-                <iframe src="imag/Rotary_Vane_Vacuum_Pump_Technical_Development_Report.pdf" title="Vane PDF" style="margin-bottom: 0;"></iframe>
+                <iframe src="imag/Rotary_Vane_Vacuum_Pump_Technical_Development_Report.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Vane PDF" style="margin-bottom: 0;"></iframe>
             </div>
 
             <div id="vane-video" class="toggle-container">
@@ -621,7 +628,7 @@
 
             <!-- بخش‌های کشویی پروژه Liquid Ring Vacuum Pump -->
             <div id="liquid-pdf" class="toggle-container">
-                <iframe src="imag/LRVP_Mehrnia_Report04.pdf" title="Liquid Ring Vacuum Pump PDF" style="margin-bottom: 0;"></iframe>
+                <iframe src="imag/LRVP_Mehrnia_Report04.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Liquid Ring Vacuum Pump PDF" style="margin-bottom: 0;"></iframe>
             </div>
 
             <div id="liquid-video" class="toggle-container">
@@ -666,7 +673,7 @@
 
             <!-- بخش کشویی ۱ پروژه ۳ -->
             <div id="pump-workflow" class="toggle-container">
-                <iframe src="imag/Design_Workflow.pdf" title="Design Workflow PDF" style="margin-bottom: 0;"></iframe>
+                <iframe src="imag/Design_Workflow.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Design Workflow PDF" style="margin-bottom: 0;"></iframe>
             </div>
 
             <!-- بخش کشویی ۲ پروژه ۳ -->
@@ -714,7 +721,7 @@
 
             <!-- بخش کشویی PDF پروژه چهارم -->
             <div id="peri-workflow" class="toggle-container">
-                <iframe src="imag/Peristaltic_Design_Workflow.pdf" title="Peristaltic Design Workflow PDF" style="margin-bottom: 0;"></iframe>
+                <iframe src="imag/Peristaltic_Design_Workflow.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Peristaltic Design Workflow PDF" style="margin-bottom: 0;"></iframe>
             </div>
 
             <!-- بخش کشویی ویدیو پروژه چهارم -->
@@ -790,7 +797,7 @@
                         <span class="icon solid major fa-cogs"></span>
                         <h3>Systems Engineering</h3>
                         <p>
-                            MBSE, Electromechanical systems, pumps, compressors, 
+                            MBSE, Electromechanical systems, pumps, compressors,
                         </p>
                     </section>
 
@@ -830,7 +837,7 @@
                             <strong>Engineering &amp; Product Strategy |</strong> Technology Roadmapping | Portfolio Management
                         </li>
                         <li>
-                            <strong>Electromechanical &amp; Vacuum Systems |</strong> Pumps, Compressors 
+                            <strong>Electromechanical &amp; Vacuum Systems |</strong> Pumps, Compressors
                         </li>
                         <li>
                             <strong>Systems Engineering |</strong> MBSE | Digital Thread | Digital Twin | ECAD/MCAD
@@ -909,7 +916,7 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- Script to toggle sections (PDF & Video) -->
+    <!-- Script to toggle sections (PDF & Video) and block basic print/contextmenu -->
     <script>
         function toggleSection(sectionId) {
             var target = document.getElementById(sectionId);
@@ -926,6 +933,16 @@
                 $(target).hide().slideDown(300);
             }
         }
+
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && (e.key.toLowerCase() === 'p' || e.key.toLowerCase() === 's')) {
+                e.preventDefault();
+            }
+        });
     </script>
 
 </body>
