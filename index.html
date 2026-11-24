@@ -133,12 +133,12 @@
             padding-left: 0;
         }
 
-        /* تنظیم دقیقا یک‌راستا کردن تمام ۵ سطر بولت‌ها و دکمه‌ها */
+        /* تنظیم بولت‌ها و دکمه‌های Watch با کمی جابه‌جایی به سمت وسط */
         .intro-bullets li {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 1em;
+            gap: 1.2em;
             margin-bottom: 1em;
             line-height: 1.6;
         }
@@ -150,33 +150,36 @@
 
         .inline-btn-group {
             display: inline-flex;
-            gap: 0.4em;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12%;
             flex-shrink: 0;
         }
 
         .small-black-btn {
             background: #111111 !important;
             color: #ffffff !important;
-            border: 1px solid rgba(255, 255, 255, 0.3) !important;
-            padding: 0.2em 0.8em !important;
-            font-size: 0.75em !important;
+            border: 1px solid rgba(255, 255, 255, 0.35) !important;
+            padding: 0.3em 0.9em !important;
+            font-size: 0.85em !important;
             font-weight: 600;
             height: auto !important;
-            line-height: 1.5 !important;
-            border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            line-height: 1.45 !important;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
             transition: all 0.2s ease;
             text-decoration: none !important;
             display: inline-block;
             cursor: pointer;
-            width: 4.5em;
+            width: 5.5em;
             text-align: center;
         }
 
         .small-black-btn:hover {
             background: #222222 !important;
-            border-color: rgba(255, 255, 255, 0.6) !important;
+            border-color: rgba(255, 255, 255, 0.65) !important;
             color: #ffffff !important;
+            transform: translateY(-1px);
         }
 
         /* دکمه‌های ۳ تایی بخش intro (وسط‌چین و بزرگ‌تر) */
@@ -344,6 +347,10 @@
                 justify-content: center;
             }
 
+            .inline-btn-group {
+                margin-right: 0;
+            }
+
             .toggle-container iframe {
                 height: 400px;
             }
@@ -424,7 +431,7 @@
                 <!-- عنوان درشت بالای بولت‌های پروژه -->
                 <h3 class="intro-bullets-title">Positive Displacement Machines | Selected Projects</h3>
 
-                <!-- بولت‌پوینت‌ها کاملا تراز شده با دکمه‌های Watch و Read در راستای مشخص -->
+                <!-- بولت‌پوینت‌ها با دکمه Watch -->
                 <ul class="intro-bullets">
                     <li>
                         <span class="bullet-text">
@@ -432,7 +439,6 @@
                         </span>
                         <span class="inline-btn-group">
                             <a href="javascript:void(0);" onclick="toggleSection('top-vane-video');" class="small-black-btn">Watch</a>
-                            <a href="javascript:void(0);" onclick="toggleSection('top-vane-pdf');" class="small-black-btn">Read</a>
                         </span>
                     </li>
                     <li>
@@ -441,7 +447,6 @@
                         </span>
                         <span class="inline-btn-group">
                             <a href="javascript:void(0);" onclick="toggleSection('top-liquid-video');" class="small-black-btn">Watch</a>
-                            <a href="javascript:void(0);" onclick="toggleSection('top-liquid-pdf');" class="small-black-btn">Read</a>
                         </span>
                     </li>
                     <li>
@@ -450,7 +455,6 @@
                         </span>
                         <span class="inline-btn-group">
                             <a href="javascript:void(0);" onclick="toggleSection('top-pump-video');" class="small-black-btn">Watch</a>
-                            <a href="javascript:void(0);" onclick="toggleSection('top-pump-workflow');" class="small-black-btn">Read</a>
                         </span>
                     </li>
                     <li>
@@ -459,7 +463,6 @@
                         </span>
                         <span class="inline-btn-group">
                             <a href="javascript:void(0);" onclick="toggleSection('top-peri-video');" class="small-black-btn">Watch</a>
-                            <a href="javascript:void(0);" onclick="toggleSection('top-peri-workflow');" class="small-black-btn">Read</a>
                         </span>
                     </li>
                     <li>
@@ -468,7 +471,6 @@
                         </span>
                         <span class="inline-btn-group">
                             <a href="javascript:void(0);" onclick="toggleSection('top-scroll-video');" class="small-black-btn">Watch</a>
-                            <a href="https://github.com/MajidMehrnia/Electromechanical-Fluid-Systems-Engineering" target="_blank" rel="noopener noreferrer" class="small-black-btn">Read</a>
                         </span>
                     </li>
                 </ul>
@@ -481,19 +483,11 @@
                     </video>
                 </div>
 
-                <div id="top-vane-pdf" class="toggle-container" style="margin-top: 1.5em;">
-                    <iframe src="imag/Rotary_Vane_Vacuum_Pump_Technical_Development_Report.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Vane PDF" style="margin-bottom: 0;"></iframe>
-                </div>
-
                 <div id="top-liquid-video" class="toggle-container" style="margin-top: 1.5em;">
                     <video controls preload="metadata" style="margin-bottom: 0;">
                         <source src="imag/liquid.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                </div>
-
-                <div id="top-liquid-pdf" class="toggle-container" style="margin-top: 1.5em;">
-                    <iframe src="imag/LRVP_Mehrnia_Report04.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Liquid Ring Vacuum Pump PDF" style="margin-bottom: 0;"></iframe>
                 </div>
 
                 <div id="top-pump-video" class="toggle-container" style="margin-top: 1.5em;">
@@ -507,19 +501,11 @@
                     </video>
                 </div>
 
-                <div id="top-pump-workflow" class="toggle-container" style="margin-top: 1.5em;">
-                    <iframe src="imag/Design_Workflow.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Design Workflow PDF" style="margin-bottom: 0;"></iframe>
-                </div>
-
                 <div id="top-peri-video" class="toggle-container" style="margin-top: 1.5em;">
                     <video controls preload="metadata" style="margin-bottom: 0;">
                         <source src="imag/Peristaltic.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                </div>
-
-                <div id="top-peri-workflow" class="toggle-container" style="margin-top: 1.5em;">
-                    <iframe src="imag/Peristaltic_Design_Workflow.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Peristaltic Design Workflow PDF" style="margin-bottom: 0;"></iframe>
                 </div>
 
                 <div id="top-scroll-video" class="toggle-container" style="margin-top: 1.5em;">
@@ -554,7 +540,7 @@
 
             <!-- Project 1: Rotary Vane Vacuum Pump -->
             <section id="vane-project">
-                <a href="javascript:void(0);" onclick="toggleSection('vane-pdf');" class="image">
+                <a href="javascript:void(0);" onclick="toggleSection('vane-video');" class="image">
                     <img
                         src="imag/vane.jpg"
                         alt="Rotary Vane Vacuum Pump"
@@ -569,11 +555,6 @@
                         </p>
                         <ul class="actions">
                             <li>
-                                <a href="javascript:void(0);" onclick="toggleSection('vane-pdf');" class="button">
-                                    Read Document
-                                </a>
-                            </li>
-                            <li>
                                 <a href="javascript:void(0);" onclick="toggleSection('vane-video');" class="button">
                                     Watch Presentation
                                 </a>
@@ -582,11 +563,6 @@
                     </div>
                 </div>
             </section>
-
-            <!-- بخش‌های کشویی پروژه Rotary Vane -->
-            <div id="vane-pdf" class="toggle-container">
-                <iframe src="imag/Rotary_Vane_Vacuum_Pump_Technical_Development_Report.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Vane PDF" style="margin-bottom: 0;"></iframe>
-            </div>
 
             <div id="vane-video" class="toggle-container">
                 <video controls preload="metadata" style="margin-bottom: 0;">
@@ -597,7 +573,7 @@
 
             <!-- Project 2: Liquid Ring Vacuum Pump -->
             <section id="liquid-project">
-                <a href="javascript:void(0);" onclick="toggleSection('liquid-pdf');" class="image">
+                <a href="javascript:void(0);" onclick="toggleSection('liquid-video');" class="image">
                     <img
                         src="imag/liquid.jpg"
                         alt="Liquid Ring Vacuum Pump"
@@ -612,11 +588,6 @@
                         </p>
                         <ul class="actions">
                             <li>
-                                <a href="javascript:void(0);" onclick="toggleSection('liquid-pdf');" class="button">
-                                    Read Document
-                                </a>
-                            </li>
-                            <li>
                                 <a href="javascript:void(0);" onclick="toggleSection('liquid-video');" class="button">
                                     Watch Presentation
                                 </a>
@@ -625,11 +596,6 @@
                     </div>
                 </div>
             </section>
-
-            <!-- بخش‌های کشویی پروژه Liquid Ring Vacuum Pump -->
-            <div id="liquid-pdf" class="toggle-container">
-                <iframe src="imag/LRVP_Mehrnia_Report04.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Liquid Ring Vacuum Pump PDF" style="margin-bottom: 0;"></iframe>
-            </div>
 
             <div id="liquid-video" class="toggle-container">
                 <video controls preload="metadata" style="margin-bottom: 0;">
@@ -640,7 +606,7 @@
 
             <!-- Project 3: Diaphragm Pump -->
             <section id="pump-project">
-                <a href="javascript:void(0);" onclick="toggleSection('pump-workflow');" class="image">
+                <a href="javascript:void(0);" onclick="toggleSection('pump-video');" class="image">
                     <img
                         src="imag/diaphragmaction.gif"
                         alt="Diaphragm Pump Action"
@@ -657,11 +623,6 @@
                         </p>
                         <ul class="actions">
                             <li>
-                                <a href="javascript:void(0);" onclick="toggleSection('pump-workflow');" class="button">
-                                    Design Workflow
-                                </a>
-                            </li>
-                            <li>
                                 <a href="javascript:void(0);" onclick="toggleSection('pump-video');" class="button">
                                     Watch Presentation
                                 </a>
@@ -671,12 +632,6 @@
                 </div>
             </section>
 
-            <!-- بخش کشویی ۱ پروژه ۳ -->
-            <div id="pump-workflow" class="toggle-container">
-                <iframe src="imag/Design_Workflow.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Design Workflow PDF" style="margin-bottom: 0;"></iframe>
-            </div>
-
-            <!-- بخش کشویی ۲ پروژه ۳ -->
             <div id="pump-video" class="toggle-container">
                 <video controls preload="metadata">
                     <source src="imag/v1.mp4" type="video/mp4">
@@ -690,7 +645,7 @@
 
             <!-- Project 4: Peristaltic Blood Pump -->
             <section id="peri-project">
-                <a href="javascript:void(0);" onclick="toggleSection('peri-workflow');" class="image">
+                <a href="javascript:void(0);" onclick="toggleSection('peri-video');" class="image">
                     <img
                         src="imag/Peri.jpg"
                         alt="Peristaltic Blood Pump"
@@ -705,11 +660,6 @@
                         </p>
                         <ul class="actions">
                             <li>
-                                <a href="javascript:void(0);" onclick="toggleSection('peri-workflow');" class="button">
-                                    Design Workflow
-                                </a>
-                            </li>
-                            <li>
                                 <a href="javascript:void(0);" onclick="toggleSection('peri-video');" class="button">
                                     Watch Presentation
                                 </a>
@@ -719,12 +669,6 @@
                 </div>
             </section>
 
-            <!-- بخش کشویی PDF پروژه چهارم -->
-            <div id="peri-workflow" class="toggle-container">
-                <iframe src="imag/Peristaltic_Design_Workflow.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Peristaltic Design Workflow PDF" style="margin-bottom: 0;"></iframe>
-            </div>
-
-            <!-- بخش کشویی ویدیو پروژه چهارم -->
             <div id="peri-video" class="toggle-container">
                 <video controls preload="metadata" style="margin-bottom: 0;">
                     <source src="imag/Peristaltic.mp4" type="video/mp4">
@@ -750,11 +694,6 @@
                         </p>
                         <ul class="actions">
                             <li>
-                                <a href="https://github.com/MajidMehrnia/Electromechanical-Fluid-Systems-Engineering" target="_blank" rel="noopener noreferrer" class="button">
-                                    Project Details
-                                </a>
-                            </li>
-                            <li>
                                 <a href="javascript:void(0);" onclick="toggleSection('scroll-video');" class="button">
                                     Watch Presentation
                                 </a>
@@ -764,7 +703,6 @@
                 </div>
             </section>
 
-            <!-- بخش کشویی ویدیو پروژه پنجم (Scroll.mp4) -->
             <div id="scroll-video" class="toggle-container">
                 <video controls preload="metadata" style="margin-bottom: 0;">
                     <source src="imag/Scroll.mp4" type="video/mp4">
